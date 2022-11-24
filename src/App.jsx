@@ -56,7 +56,7 @@ function App() {
             )
             .then((response) => response.data)
             .then((data) => {
-                console.log(data.results);
+                // console.log(data.results);
                 setList(data.results);
                 setUser(data.results[0]);
             })
