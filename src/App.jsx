@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Footer from "./components/Footer";
@@ -11,29 +10,6 @@ import User from "./pages/User";
 import Card from "./pages/Card";
 
 function App() {
-    const [list, setList] = useState([]);
-
-    useEffect(() => {
-        const source = axios.CancelToken.source();
-        axios
-            .get(
-                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50",
-                {
-                    cancelToken: source.token,
-                }
-            )
-            .then((response) => response.data)
-            .then((data) => {
-                console.log(data.results);
-                setList(data.results);
-            })
-            .catch((error) => {
-                console.error(error.message);
-            });
-        return () => {
-            source.cancel();
-        };
-    }, []);
 
     return (
         <>
