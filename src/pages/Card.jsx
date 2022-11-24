@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../styles/card.css";
 import Message from "../components/BigCard/Message";
 
+import logoFemme from "../assets/kisspng-female.png";
+import logoHomme from "../assets/male.png";
+
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 
@@ -43,6 +46,7 @@ const Card = ({ user }) => {
         event.preventDefault();
         if (oneMessage !== "") {
             setAllMessage((oldArray) => [...oldArray, oneMessage]);
+            setEmote(!emote);
         }
         setOneMessage("");
     };
@@ -52,7 +56,12 @@ const Card = ({ user }) => {
             <div className="container-image">
                 <img src={user.picture.large} alt="utilisateur" />
                 <div className="gender-user">
-                    <p>{user.gender === "male" ? "M" : "F"}</p>
+                    {user.gender === "male" ? (
+                        <img src={logoHomme} alt="M" />
+                    ) : (
+                        <img src={logoFemme} alt="F" />
+                    )}
+
                     <div
                         className={isFavorite ? "isFavorite" : "notFavorite"}
                         onClick={() => handleFavorite()}

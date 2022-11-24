@@ -1,20 +1,19 @@
 .carte-profil:hover {
-        transform: scale(1.2);
+    transform: scale(1.2);
 }
 
-.carte-profil{
+.carte-profil {
     position: relative;
     transition-duration: 1.5s;
     transition-timing-function: ease-in-out;
     border: 3px solid var(--green);
-    box-shadow: 5px 9px 11px var(--green);
     background-color: #fff;
+    box-shadow: -5px 5px 7px black;
     border-radius: 10px;
     width: 150px;
     height: 230px;
     cursor: pointer;
 }
-
 
 .carte-profil .cadre-photo {
     position: absolute;
@@ -23,40 +22,38 @@
     justify-content: center;
     border-radius: 10px 10px 0 0;
     border-bottom: 3px solid var(--green);
-    
 }
 
 .carte-profil .isFavorite {
     position: absolute;
-    top:5%;
+    top: 5%;
     right: 5%;
     width: 25px;
     height: 25px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg');
-    background-size: 100%;
-    align-self: flex-start;
-    background-repeat: no-repeat;
-  }
-  
-  .carte-profil .notFavorite {
-    position: absolute;
-    top:5%;
-    right: 5%;
-    width: 25px;
-    height: 25px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg');
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
     background-size: 100%;
     align-self: flex-start;
     background-repeat: no-repeat;
 }
-  
+
+.carte-profil .notFavorite {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 25px;
+    height: 25px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
+    background-size: 100%;
+    align-self: flex-start;
+    background-repeat: no-repeat;
+}
 
 .carte-profil .sexe img {
     position: absolute;
     width: 13px;
-    top:-7%;
+    top: -7%;
     left: 5%;
-    padding-top:20px;
+    padding-top: 20px;
 }
 
 .carte-profil .personne {
@@ -97,18 +94,16 @@
     font-size: 0.8rem;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
+    .carte-profil:hover {
+        transform: scale(1);
+    }
 
-.carte-profil:hover {
-    transform: scale(1);
-}
+    .carte-profil {
+        width: 100%;
+    }
 
-.carte-profil {
-    width: 100%;
-}
-
-.cadre-photo {
-    width: 100%;
-}
-
+    .cadre-photo {
+        width: 100%;
+    }
 }

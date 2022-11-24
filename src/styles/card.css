@@ -2,7 +2,6 @@
     background-color: var(--yellow);
     height: 100%;
     width: 100%;
-    padding: 1rem;
 
     display: flex;
     flex-direction: column;
@@ -11,6 +10,7 @@
     gap: 1rem;
 
     text-align: center;
+    padding: 1rem 0 5rem;
 }
 
 .big-card .container-image img {
@@ -24,6 +24,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.big-card .gender-user img {
+    height: 20px;
+    border-radius: none;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
 }
 
 .big-card .notFavorite {
@@ -93,10 +101,6 @@
     scroll-behavior: auto;
 }
 
-.big-card .full-conversation .message {
-    background-color: lightgray;
-}
-
 .big-card .message {
     border: 1px lightgray solid;
     border-radius: 20px;
@@ -108,10 +112,14 @@
 
 .big-card .left-conv {
     align-self: flex-start;
+    background-color: lightgray;
+    border: 2px var(--green) solid;
 }
 
 .big-card .right-conv {
     align-self: flex-end;
+    background-color: var(--green);
+    border: 2px lightgray solid;
 }
 
 /* --- */
