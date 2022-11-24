@@ -1,5 +1,5 @@
 .big-card {
-    background-color: var(--yellow);
+    background-color: var(--back);
     height: 100%;
     width: 100%;
 
@@ -34,20 +34,21 @@
     overflow: hidden;
 }
 
-.big-card .notFavorite {
+.big-card .heart {
     width: 25px;
     height: 25px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 
-.big-card .isFavorite {
+.big-card .notFavorite .heart {
     width: 25px;
     height: 25px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
-    background-size: 100%;
-    align-self: flex-start;
+    color: var(--frontgray);
+}
+
+.big-card .isFavorite .heart {
+    width: 25px;
+    height: 25px;
+    color: rgb(255, 50, 50);
 }
 
 .container-info h3 {
@@ -62,6 +63,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
+
+    color: var(--textcolor);
 }
 
 /* --- */
@@ -92,7 +95,7 @@
 /* --- */
 
 .big-card .full-conversation {
-    background-color: rgb(240, 240, 240);
+    background-color: var(--backgray);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -186,7 +189,7 @@
 }
 
 .big-card textarea:focus {
-    outline: none !important;
+    outline: none;
 }
 
 .big-card .container-new-message button {
