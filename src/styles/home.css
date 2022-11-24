@@ -1,0 +1,20 @@
+
+.profil {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15%;
+}
+
+@media screen and (max-width: 600px) {
+
+.profil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 30%;
+}
+    
+}
