@@ -7,7 +7,7 @@ function Home() {
     return (
         <main className="home">
             <img className="bandeauImage" src={imageC} alt="bandeauImage"/>
-            <h1>HOME</h1>
+            <h1>AdopteUnGuide</h1>
 
             <div className="profil">
                 <MiniCard 
