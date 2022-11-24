@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import "../styles/card.css";
 import Message from "../components/BigCard/Message";
 
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
+
 const Card = ({ user }) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
-    const [allMessage, setAllMessage] = useState([]);
     const [oneMessage, setOneMessage] = useState("");
+    const [allMessage, setAllMessage] = useState([]);
 
+    // ouverture - fermeture
     const [fichier, setFichier] = useState(false);
     const [emote, setEmote] = useState(false);
 
@@ -23,9 +27,17 @@ const Card = ({ user }) => {
         setEmote(!emote);
     };
 
+    // ---
+
     const handleChangeOneMessage = (event) => {
         setOneMessage(event.target.value);
     };
+
+    const handleEmoji = (emoji) => {
+        setOneMessage((oldArray) => oldArray + emoji);
+    };
+
+    // ---
 
     const envoieMessage = (event) => {
         event.preventDefault();
@@ -49,9 +61,8 @@ const Card = ({ user }) => {
             </div>
 
             <div className="container-info">
-                <p>
-                    {user.name.first} - {user.dob.age}
-                </p>
+                <h3>{user.name.first}</h3>
+                <p>{user.dob.age} ans</p>
                 <p>
                     {user.location.country} - {user.location.city}
                 </p>
@@ -96,14 +107,18 @@ const Card = ({ user }) => {
                         <button type="submit">Send</button>
                     </form>
 
-                    <div className="bas-gauche">
-                        <button
-                            className="bas-droite"
-                            onClick={() => handleEmote()}
-                        >
-                            emote
-                        </button>
-                        {emote ? <div className="emote"></div> : null}
+                    <div className="bas-droite">
+                        <button onClick={() => handleEmote()}>emote</button>
+                        {emote ? (
+                            <div className="emote">
+                                <Picker
+                                    data={data}
+                                    onEmojiSelect={(obj) =>
+                                        handleEmoji(obj.native)
+                                    }
+                                />
+                            </div>
+                        ) : null}
                     </div>
                 </div>
             </div>
