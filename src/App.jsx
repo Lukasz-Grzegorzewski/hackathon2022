@@ -16,11 +16,11 @@ import users from "./data/users.json";
 function App() {
     const [list, setList] = useState([]);
 
-    //LOGIN
-    const [authentification, setAuthentification] = useState(true);
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(false);
+  //LOGIN
+  const [authentification, setAuthentification] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
     // pour un user
     const [user, setUser] = useState([]);

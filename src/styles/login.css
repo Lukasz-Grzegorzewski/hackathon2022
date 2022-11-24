@@ -39,7 +39,6 @@
 .form input {
   height: 30px;
   border: 1px solid #f7f6dc;
-  box-shadow: 0 5px 5px #ffc09056;
   border-radius: 5px;
   padding-left: 10px;
 }
@@ -52,12 +51,13 @@
 
 .form .submitBtn {
   width: 50%;
-  background-color: #f7f6dc;;
+  background-color: #f7f6dc;
+  margin-bottom: 10px;
 }
 
 .error {
   position: relative;
-  background-color: rgba(255, 87, 87, 0.761);
+  background-color: rgba(255, 0, 0, 0.306);
 }
 
 .h1-no-error{

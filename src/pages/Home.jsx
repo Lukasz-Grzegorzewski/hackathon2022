@@ -10,7 +10,7 @@ const Home = () => {
     const getAllPeople = () => {
         axios
             .get(
-                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50"
+                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=500"
             )
             .then((response) => response.data)
             .then((data) => {
