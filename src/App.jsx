@@ -14,6 +14,7 @@ import Page404 from "./components/Page404";
 import users from "./data/users.json";
 
 function App() {
+
   const [list, setList] = useState([]);
 
   //LOGIN
@@ -21,6 +22,9 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  
+  // pour un user
+  const [user, setUser] = useState([]);
 
   const navigate = useNavigate();
 
@@ -53,6 +57,7 @@ function App() {
       .then((data) => {
         console.log(data.results);
         setList(data.results);
+        setUser(data.results[0]);
       })
       .catch((error) => {
         console.error(error.message);
@@ -93,6 +98,7 @@ function App() {
       <Footer />
     </>
   );
+
 }
 
 export default App;
