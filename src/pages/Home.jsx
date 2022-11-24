@@ -5,7 +5,6 @@ function Home() {
     return (
         <main className="home">
             <h1>HOME</h1>
-            Home
         </main>
     );
 }

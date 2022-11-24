@@ -1,0 +1,74 @@
+:root {
+  --card-height: 60%;
+  --card-width: 50%;
+}
+
+.users-temp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-container {
+}
+
+.login-card {
+  position: fixed;
+  top: calc(var(--card-height) - var(--card-height) / 2);
+  left: calc(var(--card-width) - var(--card-width) / 2);
+  width: var(--card-width);
+  height: 25%;
+  padding: 5%;
+  border: 1px solid #f7f6dc;
+  box-shadow: 0 0 20px #f7f6dc, 0 0 10px #ffc090;
+  border-radius: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.element-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input {
+  height: 30px;
+  border: 1px solid #f7f6dc;
+  box-shadow: 0 5px 5px #ffc09056;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.form .submitBtn-container {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.form .submitBtn {
+  width: 50%;
+  background-color: #f7f6dc;;
+}
+
+.error {
+  position: relative;
+  background-color: rgba(255, 87, 87, 0.761);
+}
+
+.h1-no-error{
+    display: none;
+}
+
+.h1-error{
+    width: 100%;
+    text-align: center;
+
+    position: absolute;
+    left: 0;
+    top: -15%;
+}
