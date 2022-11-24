@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "../styles/MiniCard.css";
 import logoFemme from "../assets/kisspng-female.png";
 import logoHomme from "../assets/male.png";
+import {Link} from 'react-router-dom';
 
 const MiniCard = () => {
 
@@ -46,8 +47,8 @@ const MiniCard = () => {
 
     return (
     <div>
+        <Link to="/card">
         <div className="carte-profil">
-
             <div className='cadre-photo'>
                 <div className="sexe">{user.gender === "female" ? <img classeName="femme"src={logoFemme} alt="f"/> : <img classeName="homme"src={logoHomme} alt="M"/>}</div>
 
@@ -68,7 +69,7 @@ const MiniCard = () => {
         
         </div>
         </div>
-
+        </Link>
     </div>
     );
 

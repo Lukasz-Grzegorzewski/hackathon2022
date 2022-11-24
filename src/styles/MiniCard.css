@@ -8,6 +8,7 @@
     transition-timing-function: ease-in-out;
     border: 3px solid var(--green);
     box-shadow: 5px 9px 11px var(--green);
+    background-color: #fff;
     border-radius: 10px;
     width: 150px;
     height: 230px;
