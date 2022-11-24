@@ -35,7 +35,7 @@ function App() {
       navigate("/home");
     } else {
       setError(!error);
-    //   navigate("/page404");
+      //   navigate("/page404");
     }
   };
   //LOGIN - END
@@ -64,7 +64,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar setAuthentification={setAuthentification} />
       <Routes>
         <Route
           path="/"
