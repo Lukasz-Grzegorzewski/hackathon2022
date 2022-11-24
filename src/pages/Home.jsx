@@ -33,8 +33,7 @@ const Home = () => {
                 filter.splice(i, 1)
             }
         } return setFilteredLocations(filter);
-    }
-        ;
+    };
     const [gender, setGender] = useState('all');
     const [location, setLocation] = useState('all');
     const filterPeople = () => {
