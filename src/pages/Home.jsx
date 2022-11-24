@@ -5,7 +5,6 @@ import "../styles/home.css";
 
 const Home = () => {
     const [allPeople, setAllPeople] = useState([]);
-    const [filtered, setFiltered] = useState([]);
 
     const getAllPeople = () => {
         axios
@@ -15,7 +14,6 @@ const Home = () => {
             .then((response) => response.data)
             .then((data) => {
                 setAllPeople(data.results);
-                setFiltered(data.results);
                 console.log(data.results);
             })
             .catch((error) => {
@@ -26,37 +24,8 @@ const Home = () => {
         getAllPeople();
     }, []);
 
-    const [gender, setGender] = useState("all");
-    const [location, setLocation] = useState("all");
-
-    const filterPeople = () => {
-        let genderFiltered = [];
-        let locationFiltered = [];
-        if (gender === "all" && location === "all") {
-            setFiltered(allPeople);
-        } else if (gender !== "all" && location === "all") {
-            for (let i = 0; i < allPeople.length; i++) {
-                if (allPeople[i].gender === gender) {
-                    genderFiltered.push(allPeople[i]);
-                }
-            }
-            setFiltered(genderFiltered);
-        } else if (gender === "all" && location !== "all") {
-            for (let i = 0; i < filtered.length; i++) {
-                if (filtered[i].location.country === location) {
-                    locationFiltered.push(filtered[i]);
-                }
-            }
-            setFiltered(locationFiltered);
-        }
-        if (location !== "all" && gender !== "all") {
-            for (let i = 0; i < filtered.length; i++) {}
-        }
-    };
-
-    useEffect(() => {
-        filterPeople();
-    }, [gender, location]);
+    const [gender, setGender] = useState("");
+    const [location, setLocation] = useState("");
 
     const getUnique = (array) => {
         let unique = [];
@@ -96,16 +65,29 @@ const Home = () => {
                 <div className="countryFilter">
                     <h4>Localisation</h4>
                     <select onChange={(e) => setLocation(e.target.value)}>
-                        <option value="all">Tous</option>
+                        <option value="">Tous</option>
                         {getUnique(allPeople).map((each) => (
                             <option value={each}>{each}</option>
                         ))}
                     </select>
                 </div>
             </div>
-            {filtered.map((people, index) => (
-                <p key={index}>{people.name.first}</p>
-            ))}
+            {gender !== "all"
+                ? allPeople
+                      .filter((each) => each.gender === gender)
+                      .filter((each) =>
+                          each.location.country.includes(location)
+                      )
+                      .map((people, index) => (
+                          <p key={index}>{people.name.first}</p>
+                      ))
+                : allPeople
+                      .filter((each) =>
+                          each.location.country.includes(location)
+                      )
+                      .map((people, index) => (
+                          <p key={index}>{people.name.first}</p>
+                      ))}
         </div>
     );
 };
