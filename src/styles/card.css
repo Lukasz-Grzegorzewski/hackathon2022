@@ -1,0 +1,174 @@
+/* :root {
+    --green: #7fb77e;
+    --yellow: #f7f6dc;
+    --orange: #ffc090;
+    --title: "Mochiy Pop One", sans-serif;
+    --text: "Montserrat", sans-serif;
+} */
+
+.big-card {
+    background-color: var(--yellow);
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    text-align: center;
+}
+
+.container-image img {
+    border: 2px var(--green) solid;
+    border-radius: 25px;
+    box-shadow: -5px 5px 7px black;
+}
+
+.big-card .gender-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notFavorite {
+    width: 25px;
+    height: 25px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.isFavorite {
+    width: 25px;
+    height: 25px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
+    background-size: 100%;
+    align-self: flex-start;
+}
+
+/* --- */
+
+.big-card .container-conversation {
+    border: 3px var(--orange) solid;
+    box-shadow: 0px 0px 15px black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 400px;
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+}
+
+.start-conversation {
+    background-color: lightgray;
+    width: 100%;
+    border-bottom: 2px gray solid;
+    padding: 0.5rem 0;
+}
+
+/* --- */
+
+.full-conversation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+}
+
+.message {
+    border: 1px lightgray solid;
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin: 1rem;
+    max-width: 70%;
+    overflow-wrap: break-word;
+}
+
+.left-conv {
+    align-self: flex-start;
+}
+
+.right-conv {
+    align-self: flex-end;
+}
+
+/* --- */
+
+.bas-conversation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0.25rem 0;
+    background-color: lightgray;
+    border-top: 2px gray solid;
+}
+
+.bas-gauche,
+.bas-droite {
+    position: relative;
+}
+
+.bas-gauche button,
+button.bas-droite {
+    margin: 0 1rem;
+    padding: 0.25rem 0.5rem;
+    position: relative;
+}
+
+.fichier {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+    height: 150px;
+    width: 150px;
+    border: var(--orange) 2px solid;
+    background-color: lightgray;
+}
+
+.emote {
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    height: 150px;
+    width: 150px;
+    border: var(--orange) 2px solid;
+    background-color: lightgray;
+}
+
+.container-new-message {
+    border: 1px gray solid;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container-new-message textarea {
+    padding: 0.25rem 0.5rem;
+    resize: none;
+    width: 100%;
+    line-height: 1.2;
+    height: 100%;
+}
+
+textarea:focus {
+    outline: none !important;
+}
+
+.container-new-message button {
+    padding: 0.25rem;
+    border-left: 1px gray solid;
+}

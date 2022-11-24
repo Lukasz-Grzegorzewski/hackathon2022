@@ -11,21 +11,23 @@ import User from "./pages/User";
 import Card from "./pages/Card";
 
 function App() {
-    const [list, setList] = useState([]);
+    // const [list, setList] = useState([]);
+    const [user, setUser] = useState([]);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
         axios
             .get(
-                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50",
+                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=10",
                 {
                     cancelToken: source.token,
                 }
             )
             .then((response) => response.data)
             .then((data) => {
-                console.log(data.results);
-                setList(data.results);
+                console.log(data.results[0]);
+                // setList(data.results);
+                setUser(data.results[0]);
             })
             .catch((error) => {
                 console.error(error.message);
@@ -41,7 +43,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/card" element={<Card />} />
+                <Route
+                    path="/card"
+                    element={user.length !== 0 && <Card user={user} />}
+                />
                 <Route path="/user" element={<User />} />
             </Routes>
             <Footer />
