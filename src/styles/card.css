@@ -10,7 +10,19 @@
     gap: 1rem;
 
     text-align: center;
-    padding: 1rem 0 5rem;
+    padding: 0 0 5rem 0;
+}
+
+.big-card .container-image {
+    background: url(../assets/holiday.jpg) no-repeat 50% 50%;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .big-card .container-image img {
@@ -24,6 +36,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+    margin-top: 0.25rem;
 }
 
 .big-card .gender-user img {
