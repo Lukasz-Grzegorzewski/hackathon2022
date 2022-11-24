@@ -1,0 +1,15 @@
+.page404{
+    padding-top: 20%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 20%;
+    /* background-color: red; */
+}
+
+.page404 h1.error404{
+    font-size: 60px;
+}
