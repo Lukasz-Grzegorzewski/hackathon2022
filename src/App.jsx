@@ -17,7 +17,7 @@ function App() {
   const [list, setList] = useState([]);
 
   //LOGIN
-  const [authentification, setAuthentification] = useState(false);
+  const [authentification, setAuthentification] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -31,11 +31,10 @@ function App() {
     if (
       users.some((user) => user.email == email && user.password == password)
     ) {
-      setAuthentification(!authentification);
+      setAuthentification(true);
       navigate("/home");
     } else {
       setError(!error);
-      //   navigate("/page404");
     }
   };
   //LOGIN - END

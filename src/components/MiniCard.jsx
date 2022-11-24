@@ -49,7 +49,7 @@ const MiniCard = () => {
         <div className="carte-profil">
 
             <div className='cadre-photo'>
-                <div className="sexe">{user.gender === "female" ? <img classeName="femme"src={logoFemme} alt="f"/> : <img classeName="homme"src={logoHomme} alt="M"/>}</div>
+                <div className="sexe">{user.gender === "female" ? <img className="femme"src={logoFemme} alt="f"/> : <img className="homme"src={logoHomme} alt="M"/>}</div>
 
                 <div id="favorite" onClick={handleClickFavorite}
                     className={isFavorite? 'isFavorite' : 'notFavorite'} />

@@ -24,7 +24,7 @@ const Login = ({
         ))}
       </div>
       <div className="login-card">
-        <form className="form" onSubmit={(e) => e.preventDefault()}>
+        <form action="post" className="form" onSubmit={(e) => e.preventDefault()}>
           <div className="email-container element-form">
             <h2 className={!error? "h1-no-error" : "h1-error"}>Wrong Email or Password</h2>
             <label className="email-label" htmlFor="email-input">
