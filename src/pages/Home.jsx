@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import MiniCard from "../components/MiniCard";
 import "../styles/home.css";
 import imageC from "../assets/camera.jpg";
 
 const Home = ({ list }) => {
     const [allPeople, setAllPeople] = useState(list);
-    const [gender, setGender] = useState("");
+    const [gender, setGender] = useState("all");
     const [location, setLocation] = useState("");
     const [age, setAge] = useState("all")
     const getUnique = (array) => {
