@@ -1,0 +1,254 @@
+html {scroll-snap-type: y mandatory}
+
+.user {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.user .section {
+    position: relative;
+    height: 100vh;
+    scroll-snap-align: center;
+    gap: 2rem;
+}
+
+.section1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section .downBtn {
+    position: absolute;
+    bottom: 7vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.section .cards {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cards .card1 {
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+
+.card1 .profile {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid var(--yellow);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.cardInside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.cardInside .img {
+    background-image: url('../assets/lego_bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: 1px solid var(--green);
+    border-right: 0;
+}
+
+.cardInside .info {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 3rem;
+    border: 3px solid var(--green);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.info .name {
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    color: var(--green);
+}
+
+.info .carac {
+    position: absolute;
+    top: calc(1rem + 92px / 2 - 32px / 2);
+    right: 1rem;
+    padding: 0.5rem 0.7rem;
+    background-color: transparent;
+    color: var(--green);
+    width: max-content;
+    font-weight: 700;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.carac span {
+    color: var(--orange);
+}
+
+.info .dob {
+    
+}
+
+.info .location {
+
+}
+
+.location span {
+    font-weight: 700;
+    color: var(--green);
+}
+
+.cards .card2 {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    padding: 1rem;
+    border: 3px solid var(--green);
+    border-radius: 25px;
+}
+
+.card2 .destinations {
+    color: var(--green);
+    font-size: 1.3rem;
+}
+
+.card2 .list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.info .link {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    background-color: var(--green);
+    color: var(--yellow);
+    border: 1px solid transparent;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+}
+
+.link:hover {
+    border: 1px solid var(--green);
+    background-color: var(--yellow);
+    color: var(--green);
+}
+
+.section .details {
+    background-color: var(--green);
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.details h2 {
+    font-size: 1.7rem;
+    color: var(--orange);
+    margin-bottom: 2rem;
+}
+
+.details .form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form .formContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form .submitBtn {
+    width: max-content;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    background-color: var(--yellow);
+    color: var(--green);
+    border: 1px solid transparent;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.submitBtn:hover {
+    border: 1px solid var(--yellow);
+    background-color: var(--green);
+    color: var(--yellow);
+}
+
+
+.formContainer .gender, .city {
+    width: 100%;
+}
+
+.formContainer .formInner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formInner label {
+    text-transform: capitalize;
+}
+
+.formInner input, select {
+    padding: 0.5rem 0.3rem;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    outline: none;
+}
+
+.formInner input:focus {
+    outline: 2px solid var(--orange);
+}
+
+@media screen and (max-width: 600px) {
+    .user {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .card .profile {
+        width: 70px;
+    }
+    .cardInside .info {
+        padding-left: 1rem;
+    }
+}
