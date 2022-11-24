@@ -6,6 +6,7 @@ function Home() {
     return (
         <main className="home">
             <h1>HOME</h1>
+
             <div className="profil">
                 <MiniCard 
                 
@@ -17,6 +18,7 @@ function Home() {
                 <MiniCard 
                 />
             </div>
+
         </main>
     );
 }
