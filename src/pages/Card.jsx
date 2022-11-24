@@ -46,7 +46,7 @@ const Card = ({ user }) => {
         event.preventDefault();
         if (oneMessage !== "") {
             setAllMessage((oldArray) => [...oldArray, oneMessage]);
-            setEmote(!emote);
+            setEmote(false);
         }
         setOneMessage("");
     };
@@ -89,7 +89,7 @@ const Card = ({ user }) => {
                         Bonjour, ça va? Moi ouais
                     </p>
                     <p className="message left-conv">
-                        au calme, on est là, tu connais"
+                        au calme, on est là, tu connais ^^
                     </p>
                     {allMessage.map((each, index) => (
                         <Message key={index} each={each} />
