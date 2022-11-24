@@ -1,0 +1,195 @@
+.big-card {
+    background-color: var(--yellow);
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    text-align: center;
+    padding: 1rem 0 5rem;
+}
+
+.big-card .container-image img {
+    border: 2px var(--green) solid;
+    border-radius: 25px;
+    box-shadow: -5px 5px 7px black;
+}
+
+.big-card .gender-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.big-card .gender-user img {
+    height: 20px;
+    border-radius: none;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.big-card .notFavorite {
+    width: 25px;
+    height: 25px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.big-card .isFavorite {
+    width: 25px;
+    height: 25px;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
+    background-size: 100%;
+    align-self: flex-start;
+}
+
+.container-info h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--green);
+}
+
+.container-info p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+/* --- */
+
+.big-card .container-conversation {
+    border: 3px var(--green) solid;
+    box-shadow: 0px 0px 15px black;
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 500px;
+    width: calc(100% - 10rem);
+    max-width: 1500px;
+}
+
+.big-card .start-conversation {
+    background-color: lightgray;
+    width: 100%;
+    border-bottom: 2px gray solid;
+    padding: 0.5rem 0;
+}
+
+/* --- */
+
+.big-card .full-conversation {
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+}
+
+.big-card .message {
+    border: 1px lightgray solid;
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin: 1rem;
+    max-width: 70%;
+    overflow-wrap: break-word;
+}
+
+.big-card .left-conv {
+    align-self: flex-start;
+    background-color: lightgray;
+    border: 2px var(--green) solid;
+}
+
+.big-card .right-conv {
+    align-self: flex-end;
+    background-color: var(--green);
+    border: 2px lightgray solid;
+}
+
+/* --- */
+
+.big-card .bas-conversation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0.25rem 0;
+    background-color: lightgray;
+    border-top: 2px gray solid;
+}
+
+.big-card .bas-gauche,
+.big-card .bas-droite {
+    position: relative;
+}
+
+.big-card .bas-gauche button,
+.big-card .bas-droite button {
+    margin: 0 1rem;
+    padding: 0.25rem 0.5rem;
+    position: relative;
+}
+
+.big-card .fichier {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+    height: 150px;
+    width: 150px;
+    border: var(--orange) 2px solid;
+    background-color: lightgray;
+}
+
+.big-card .emote {
+    position: absolute;
+    right: 220px;
+    bottom: 320px;
+    height: 150px;
+    width: 150px;
+    background-color: lightgray;
+    overflow: visible;
+}
+
+.big-card .container-new-message {
+    border: 1px gray solid;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.big-card .container-new-message textarea {
+    padding: 0.25rem 0.5rem;
+    resize: none;
+    width: 100%;
+    line-height: 1.2;
+    height: 100%;
+}
+
+.big-card textarea:focus {
+    outline: none !important;
+}
+
+.big-card .container-new-message button {
+    padding: 0.25rem;
+    border-left: 1px gray solid;
+}

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MultiRangeSlider from "multi-range-slider-react";
+import MiniCard from "../components/MiniCard";
 import "../styles/home.css";
+import imageC from "../assets/camera.jpg";
 
 const Home = () => {
     const [allPeople, setAllPeople] = useState([]);
@@ -34,6 +35,13 @@ const Home = () => {
             }
         } return setFilteredLocations(filter);
     };
+    const [minValue, set_minValue] = useState(18);
+    const [maxValue, set_maxValue] = useState(100);
+    const handleInput = (e) => {
+        set_minValue(e.minValue);
+        set_maxValue(e.maxValue);
+    };
+    const [age, setAge] = useState('all');
     const [gender, setGender] = useState('all');
     const [location, setLocation] = useState('all');
     const filterPeople = () => {
@@ -62,14 +70,18 @@ const Home = () => {
 
             }
         }
+
     }
     useEffect(() => {
         filterPeople()
-    }, [gender, location])
+    }, [gender, location, age])
     return (
         <div>
-            <h1>Home</h1>
+            <div>
+                <img className="bandeauImage" src={imageC} alt="bandeauImage" />
+            </div>
             <div className="filtersContainer">
+                <h2>Filtrer par...</h2>
                 <div className="genderFilter">
                     <h4>Genre</h4>
                     <select onChange={(e) => setGender(e.target.value)}>
@@ -77,6 +89,21 @@ const Home = () => {
                         <option value="female">Femmes</option>
                         <option value="male">Hommes</option>
                     </select>
+                </div>
+                <div className="ageFilter">
+                    <h4>Âge</h4>
+                    <div className="ageFilterContainer">
+                        <select onChange={(e) => setAge(e.target.value)}>
+                            <option value="all">Tous</option>
+                            <option value="18-25">18-25 ans</option>
+                            <option value="26-35">26-35 ans</option>
+                            <option value="36-45">36-45 ans</option>
+                            <option value="46-55">46-55 ans</option>
+                            <option value="56-65">56-65 ans</option>
+                            <option value="66-75">66-75 ans</option>
+                            <option value="75-100">plus de 75 ans</option>
+                        </select>
+                    </div>
                 </div>
                 <div className="countryFilter">
                     <h4>Localisation</h4>
@@ -86,7 +113,12 @@ const Home = () => {
                     </select>
                 </div>
             </div>
-            {filtered.map((people, index) => <p key={index}>{people.name.first}</p>)}
+
+            <div className="profil">
+                {filtered.map((user, index) => <MiniCard key={index} user={user} />)}
+
+            </div>
+
         </div>
     );
 };
