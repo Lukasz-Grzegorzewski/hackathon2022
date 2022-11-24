@@ -6,9 +6,9 @@
     position: relative;
     transition-duration: 1.5s;
     transition-timing-function: ease-in-out;
-    border: 3px solid var(--green);
+    border: 3px solid var(--orange);
     background-color: #fff;
-    box-shadow: -5px 5px 7px black;
+    box-shadow: 5px 5px 7px black;
     border-radius: 10px;
     width: 150px;
     height: 230px;
@@ -21,7 +21,7 @@
     display: flex;
     justify-content: center;
     border-radius: 10px 10px 0 0;
-    border-bottom: 3px solid var(--green);
+    border-bottom: 3px solid var(--orange);
 }
 
 .carte-profil .isFavorite {

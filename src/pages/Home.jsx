@@ -50,6 +50,7 @@ const Home = () => {
     return (
         <div>
             <div>
+                <h1 className="titre">AdopteUnGuide</h1>
                 <img className="bandeauImage" src={imageC} alt="bandeauImage" />
             </div>
             <div className="filtersContainer">
@@ -87,6 +88,9 @@ const Home = () => {
                     </select>
                 </div>
             </div>
+
+            
+            <div className="profil">
             {gender !== "all"
                 ? allPeople
                     .filter((each) => each.gender === gender)
@@ -103,6 +107,7 @@ const Home = () => {
                     .map((user, index) => (
                         <MiniCard key={index} user={user} />
                     ))}
+            </div>
         </div>
     );
 };
