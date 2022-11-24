@@ -8,6 +8,26 @@
     --text: "Montserrat", sans-serif;
 }
 
+.light {
+    --front: rgb(30, 30, 30);
+    --back: var(--yellow);
+
+    --backgray: rgb(240, 240, 240);
+    --frontgray: rgb(190, 190, 190);
+
+    --textcolor: black;
+}
+
+.dark {
+    --front: var(--yellow);
+    --back: rgb(30, 30, 30);
+
+    --backgray: rgb(190, 190, 190);
+    --frontgray: rgb(240, 240, 240);
+
+    --textcolor: white;
+}
+
 *,
 *::before,
 *::after {

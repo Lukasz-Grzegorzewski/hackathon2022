@@ -25,6 +25,9 @@ function App() {
     // pour un user
     const [user, setUser] = useState([]);
 
+    // toggle dark/light mode
+    const [darkMode, setDarkMode] = useState(true);
+
     const navigate = useNavigate();
 
     const updateEmail = (valueE) => setEmail(valueE);
@@ -69,7 +72,7 @@ function App() {
     }, []);
 
     return (
-        <>
+        <div className={darkMode ? "dark" : "light"}>
             <Navbar setAuthentification={setAuthentification} />
             <Routes>
                 <Route
@@ -91,7 +94,15 @@ function App() {
                         <Route path="/home" element={list.length !== 0 && <Home list={list} />} />
                         <Route
                             path="/card"
-                            element={user.length !== 0 && <Card user={user} />}
+                            element={
+                                user.length !== 0 && (
+                                    <Card
+                                        user={user}
+                                        setDarkMode={setDarkMode}
+                                        darkMode={darkMode}
+                                    />
+                                )
+                            }
                         />
                         <Route path="/user" element={<User />} />
                     </>
@@ -100,7 +111,7 @@ function App() {
                 )}
             </Routes>
             <Footer />
-        </>
+        </div>
     );
 }
 
