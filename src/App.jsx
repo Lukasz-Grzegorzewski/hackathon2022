@@ -88,7 +88,7 @@ function App() {
                 />
                 {authentification ? (
                     <>
-                        <Route path="/home" element={<Home />} />
+                        <Route path="/home" element={list.length !== 0 && <Home list={list} />} />
                         <Route
                             path="/card"
                             element={user.length !== 0 && <Card user={user} />}

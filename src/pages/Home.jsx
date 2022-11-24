@@ -4,26 +4,8 @@ import MiniCard from "../components/MiniCard";
 import "../styles/home.css";
 import imageC from "../assets/camera.jpg";
 
-const Home = () => {
-    const [allPeople, setAllPeople] = useState([]);
-
-    const getAllPeople = () => {
-        axios
-            .get(
-                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50"
-            )
-            .then((response) => response.data)
-            .then((data) => {
-                setAllPeople(data.results);
-            })
-            .catch((error) => {
-                console.error(error.message);
-            });
-    };
-    useEffect(() => {
-        getAllPeople();
-    }, []);
-
+const Home = ({ list }) => {
+    const [allPeople, setAllPeople] = useState(list);
     const [gender, setGender] = useState("");
     const [location, setLocation] = useState("");
     const [age, setAge] = useState("all")
