@@ -6,7 +6,6 @@ import imageC from "../assets/camera.jpg";
 
 const Home = () => {
     const [allPeople, setAllPeople] = useState([]);
-    const [filtered, setFiltered] = useState([]);
 
     const getAllPeople = () => {
         axios
@@ -16,8 +15,6 @@ const Home = () => {
             .then((response) => response.data)
             .then((data) => {
                 setAllPeople(data.results);
-                setFiltered(data.results);
-                console.log(data.results);
             })
             .catch((error) => {
                 console.error(error.message);
@@ -26,53 +23,10 @@ const Home = () => {
     useEffect(() => {
         getAllPeople();
     }, []);
-    const [filteredLocations, setFilteredLocations] = useState(filtered.sort((a, b) => a.location.country > b.location.country ? 1 : a.location.country < b.location.country ? -1 : 0));
-    const getLocations = (array) => {
-        let filter = array
-        for (let i = 0; i < filter.length - 1; i++) {
-            if (filter[i].location.country === filter[i + 1].location.country) {
-                filter.splice(i, 1)
-            }
-        } return setFilteredLocations(filter);
-    };
-    const [minValue, set_minValue] = useState(18);
-    const [maxValue, set_maxValue] = useState(100);
-    const handleInput = (e) => {
-        set_minValue(e.minValue);
-        set_maxValue(e.maxValue);
-    };
-    const [age, setAge] = useState('all');
-    const [gender, setGender] = useState('all');
-    const [location, setLocation] = useState('all');
-    const filterPeople = () => {
-        let genderFiltered = [];
-        let locationFiltered = [];
-        if (gender === "all" && location === "all") {
-            setFiltered(allPeople);
-        } else if (gender !== "all" && location === "all") {
-            for (let i = 0; i < allPeople.length; i++) {
-                if (allPeople[i].gender === gender) {
-                    genderFiltered.push(allPeople[i]);
-                }
-            }
-            setFiltered(genderFiltered);
-        } else if (gender === "all" && location !== "all") {
-            for (let i = 0; i < filtered.length; i++) {
-                if (filtered[i].location.country === location) {
-                    locationFiltered.push(filtered[i]);
-                }
-            }
-            setFiltered(locationFiltered);
-        }
-        if (location !== "all" && gender !== "all") {
-            for (let i = 0; i < filtered.length; i++) { }
-        }
-    };
 
-    useEffect(() => {
-        filterPeople();
-    }, [gender, location]);
-
+    const [gender, setGender] = useState("");
+    const [location, setLocation] = useState("");
+    const [age, setAge] = useState("")
     const getUnique = (array) => {
         let unique = [];
 
@@ -81,12 +35,9 @@ const Home = () => {
         }
 
         unique = unique
-            // pas compris cette partie =>
             .map((each, i, X) => X.indexOf(each) === i && i)
             .filter((each) => unique[each])
             .map((each) => unique[each])
-            // <= pas compris cette partie
-
             .sort(function compare(a, b) {
                 if (a < b) return -1;
                 else if (a > b) return 1;
@@ -129,19 +80,29 @@ const Home = () => {
                 <div className="countryFilter">
                     <h4>Localisation</h4>
                     <select onChange={(e) => setLocation(e.target.value)}>
-                        <option value="all">Tous</option>
+                        <option value="">Tous</option>
                         {getUnique(allPeople).map((each) => (
                             <option value={each}>{each}</option>
                         ))}
                     </select>
                 </div>
             </div>
-
-            <div className="profil">
-                {filtered.map((user, index) => <MiniCard key={index} user={user} />)}
-
-            </div>
-
+            {gender !== "all"
+                ? allPeople
+                    .filter((each) => each.gender === gender)
+                    .filter((each) =>
+                        each.location.country.includes(location)
+                    )
+                    .map((user, index) => (
+                        <MiniCard key={index} user={user} />
+                    ))
+                : allPeople
+                    .filter((each) =>
+                        each.location.country.includes(location)
+                    )
+                    .map((user, index) => (
+                        <MiniCard key={index} user={user} />
+                    ))}
         </div>
     );
 };
