@@ -26,7 +26,7 @@ const Home = () => {
 
     const [gender, setGender] = useState("");
     const [location, setLocation] = useState("");
-    const [age, setAge] = useState("")
+    const [age, setAge] = useState("all")
     const getUnique = (array) => {
         let unique = [];
 
@@ -46,7 +46,6 @@ const Home = () => {
 
         return unique;
     };
-
     return (
         <div>
             <div>
@@ -67,13 +66,11 @@ const Home = () => {
                     <div className="ageFilterContainer">
                         <select onChange={(e) => setAge(e.target.value)}>
                             <option value="all">Tous</option>
-                            <option value="18-25">18-25 ans</option>
-                            <option value="26-35">26-35 ans</option>
-                            <option value="36-45">36-45 ans</option>
-                            <option value="46-55">46-55 ans</option>
-                            <option value="56-65">56-65 ans</option>
-                            <option value="66-75">66-75 ans</option>
-                            <option value="75-100">plus de 75 ans</option>
+                            <option value="30">18-30 ans</option>
+                            <option value="45">30-45 ans</option>
+                            <option value="60">45-60 ans</option>
+                            <option value="75">60-75 ans</option>
+                            <option value="90">75-90 ans</option>
                         </select>
                     </div>
                 </div>
@@ -87,22 +84,17 @@ const Home = () => {
                     </select>
                 </div>
             </div>
-            {gender !== "all"
-                ? allPeople
-                    .filter((each) => each.gender === gender)
+            <div>
+                {allPeople
+                    .filter((each) => gender !== "all" ? each.gender === gender : each.gender.includes('male'))
                     .filter((each) =>
                         each.location.country.includes(location)
-                    )
+                    ).filter((each) => age !== "all" ? each.dob.age <= age && each.dob.age > (age - 15) : each.dob.age <= 90)
                     .map((user, index) => (
                         <MiniCard key={index} user={user} />
                     ))
-                : allPeople
-                    .filter((each) =>
-                        each.location.country.includes(location)
-                    )
-                    .map((user, index) => (
-                        <MiniCard key={index} user={user} />
-                    ))}
+                }
+            </div>
         </div>
     );
 };
