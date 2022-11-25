@@ -59,7 +59,7 @@ function App() {
     }, []);
 
     return (
-        <div className={darkMode ? "dark" : "light"}>
+        <div className={darkMode ? "dark app" : "light app"}>
             <Navbar setDarkMode={setDarkMode} darkMode={darkMode} authentification={authentification} setAuthentification={setAuthentification} />
             <Routes>
                 <Route

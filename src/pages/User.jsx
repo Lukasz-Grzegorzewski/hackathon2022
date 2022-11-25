@@ -73,7 +73,7 @@ const User = () => {
                                         <p className="carac"><span>♥</span> coding</p>
                                         <h2 className="profileName">{u.name} <br /> {u.surname}</h2>
                                         <p className="dob">{u.dob}</p >
-                                        <p className="location">{u.city}, <span>{country}</span></p>
+                                        <p className="location">{u.city}, <span>France</span></p>
                                     </>
                                 ))}
                                 <Link className="link" to="/profile">Vos messages ➜</Link>
