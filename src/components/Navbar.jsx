@@ -26,8 +26,11 @@ const Navbar = ({
         <nav className="navbar">
             <div className="navbarContainer">
                 <div className="title">
-                    <img className="logo" src={logo} alt="logo" />
+                    <Link to="/home ">
+                        <img className="logo" src={logo} alt="logo" />
+                    </Link>
                 </div>
+
                 <div className="navbarInner">
                     <div className="toggle-mode">
                         <input
