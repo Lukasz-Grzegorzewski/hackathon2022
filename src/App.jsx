@@ -87,6 +87,7 @@ function App() {
                 ) : (
                     <Route path="/*" element={<Page404 />} />
                 )}
+                <Route path='/profile' element={<User />} />
             </Routes>
             <Footer />
         </div>
