@@ -5,22 +5,34 @@
     background-color: var(--orange);
     display: flex;
     flex-direction: column;
-    padding-top: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.logo {
+.footer .logo {
     cursor: pointer;
     display: flex;
     justify-content: center;
-    gap: 5%;
+    align-items: center;
+    gap: 20px;
     height: 20px;
-    padding-bottom: 8px;
 }
 
-.name {
+.footer .name {
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 20px;
     font-size: 0.7rem;
     margin-top: 0;
+}
+
+@media screen and (max-width: 400px) {
+    .footer .name {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.7rem;
+        margin-top: 0;
+    }
 }
