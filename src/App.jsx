@@ -35,78 +35,57 @@ function App() {
     setAuthentification(JSON.parse(data));
     console.log("saved: ", data);
 
-    const source = axios.CancelToken.source();
-    axios
-      .get(
-        "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50",
-        {
-          cancelToken: source.token,
-        }
-      )
-      .then((response) => response.data)
-      .then((data) => {
-        // console.log(data.results);
-        setList(data.results);
-        setUser(data.results[0]);
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
-    return () => {
-      source.cancel();
-    };
-  }, []);
+    useEffect(() => {
+        const source = axios.CancelToken.source();
+        axios
+            .get(
+                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50",
+                {
+                    cancelToken: source.token,
+                }
+            )
+            .then((response) => response.data)
+            .then((data) => {
+                setList(data.results);
+                setUser(data.results[0]);
+            })
+            .catch((error) => {
+                console.error(error.message);
+            });
+        return () => {
+            source.cancel();
+        };
+    }, []);
 
-//   useEffect(() => {
-//     console.log('to save: ', authentification)
-//     window.localStorage.setItem(
-//       "authentification",
-//       JSON.stringify(authentification)
-//     );
-//   }, [authentification]);
-
-  return (
-    <div className={darkMode ? "dark" : "light"}>
-      <Navbar setAuthentification={setAuthentification} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Login
-              authentification={authentification}
-              authEnter={() => authEnter()}
-            />
-          }
-        />
-        <Route path="/registration" element={<Registration />} />
-        
-        {authentification ? (
-          <>
-            <Route
-              path="/home"
-              element={list.length !== 0 && <Home list={list} />}
-            />
-            <Route
-              path="/card"
-              element={
-                user.length !== 0 && (
-                  <Card
-                    user={user}
-                    setDarkMode={setDarkMode}
-                    darkMode={darkMode}
-                  />
-                )
-              }
-            />
-            <Route path="/user" element={<User />} />
-          </>
-        ) : (
-          <Route path="/*" element={<Page404 />} />
-        )}
-      </Routes>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className={darkMode ? "dark" : "light"}>
+            <Navbar setAuthentification={setAuthentification} />
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <Login
+                            authentification={authentification}
+                            authEnter={() => authEnter()}
+                        />
+                    }
+                />
+                {authentification ? (
+                    <>
+                        <Route
+                            path="/home"
+                            element={list.length !== 0 && <Home list={list} />}
+                        />
+                        <Route path="/card" element={<Card />} />
+                        <Route path="/user" element={<User />} />
+                    </>
+                ) : (
+                    <Route path="/*" element={<Page404 />} />
+                )}
+            </Routes>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
