@@ -45,7 +45,7 @@ app.post("/user", async (req, res) => {
     const json = JSON.parse(file);
     let lengthUsers = json.length;
     const userIndex = json.findIndex((item) => {
-        body.name === item.name
+        body.name == item.name
     })
     json[userIndex] = { ...json[userIndex], ...body }
     await fs.writeFile('./data/users.json', JSON.stringify(json, null, 4));
