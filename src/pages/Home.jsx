@@ -27,7 +27,7 @@ const Home = ({ list }) => {
         return unique;
     };
     return (
-        <div >
+        <div className="homePage">
             <div className="bandeauImage">
                 <h1 className="headerTitre">AdopteUnGuide</h1>
             </div>
