@@ -15,16 +15,15 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="login-container">
+    <div className="login-container registration-container">
 
       <div className="register-card">
         <form
           action="http://localhost:5010/registration"
           method="post"
           className="reg-form"
-          onSubmit={() => {
-            // navigate("/");
-          }}
+          // onSubmit={() => {
+          // }}
         >
           <div className="name-container el-reg-form">
             <label className="name-label" htmlFor="name-input">

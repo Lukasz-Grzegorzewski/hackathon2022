@@ -1,4 +1,5 @@
 :root {
+
   --card-height: 45vh;
   --card-width: 45vw;
 }
@@ -69,31 +70,38 @@
   align-items: center;
 }
 
+.login-container {
+    color: var(--front);
+    background-color: var(--back);
+}
+
+
+}
 .login-card {
-  position: fixed;
-  top: calc(var(--card-height) - var(--card-height) / 2);
-  left: calc(var(--card-width) - var(--card-width) / 2);
-  width: var(--card-width);
-  height: 25%;
-  padding: 5%;
-  border: 1px solid #f7f6dc;
-  box-shadow: 0 0 20px #f7f6dc, 0 0 10px #ffc090;
-  border-radius: 10px;
+    position: fixed;
+    top: calc(var(--card-height) - var(--card-height) / 2);
+    left: calc(var(--card-width) - var(--card-width) / 2);
+    width: var(--card-width);
+    padding: 5%;
+    border: 1px solid #f7f6dc;
+    box-shadow: 0 0 20px #f7f6dc, 0 0 10px #ffc090;
+    border-radius: 10px;
 }
 
 .form-login {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .element-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .form-login input {
+
   cursor: pointer;
   height: 30px;
   border: 1px solid var(--orange);
@@ -116,11 +124,12 @@
   height: 4vh;
   border-radius: 8px;
   background-color: var(--orange);
+  padding: 0 1rem;
 }
 
 .error {
-  position: relative;
-  background-color: rgba(255, 0, 0, 0.306);
+    position: relative;
+    background-color: rgba(255, 0, 0, 0.306);
 }
 
 .h1-no-error {
@@ -167,3 +176,4 @@
 
   }
 }
+

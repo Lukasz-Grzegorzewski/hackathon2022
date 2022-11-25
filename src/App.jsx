@@ -37,27 +37,27 @@ function App() {
         console.log("saved: ", data);
     }, [authentification])
 
-    useEffect(() => {
-        const source = axios.CancelToken.source();
-        axios
-            .get(
-                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50",
-                {
-                    cancelToken: source.token,
-                }
-            )
-            .then((response) => response.data)
-            .then((data) => {
-                setList(data.results);
-                setUser(data.results[0]);
-            })
-            .catch((error) => {
-                console.error(error.message);
-            });
-        return () => {
-            source.cancel();
-        };
-    }, []);
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+    axios
+      .get(
+        "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50",
+        {
+          cancelToken: source.token,
+        }
+      )
+      .then((response) => response.data)
+      .then((data) => {
+        setList(data.results);
+        setUser(data.results[0]);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+    return () => {
+      source.cancel();
+    };
+  }, []);
 
     return (
         <div className={darkMode ? "dark app" : "light app"}>
@@ -75,9 +75,7 @@ function App() {
                 <Route
                     path="/registration"
                     element={
-
                         <Registration />
-
                     }
                 />
                 {authentification ? (

@@ -30,6 +30,7 @@
 
 .app {
     position: relative;
+    background-color: var(--back);
 }
 
 *,
@@ -73,6 +74,7 @@ html {
 
 body {
     line-height: 1;
+    height: 100%;
 }
 
 ol,
@@ -103,10 +105,8 @@ table {
     border-spacing: 0;
 }
 
-
 @media screen and (max-width: 600px) {
     html {
         font-size: 14px;
     }
 }
-
