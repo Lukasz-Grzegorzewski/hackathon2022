@@ -41,18 +41,16 @@ app.post("/user", async (req, res) => {
     var body = req.body;
     // console.log("body: ", body);
 
-
     const file = await fs.readFile('./data/users.json');
     const json = JSON.parse(file);
     let lengthUsers = json.length;
     const userIndex = json.findIndex((item) => {
-        body.name === item.name
+        body.name == item.name
     })
     json[userIndex] = { ...json[userIndex], ...body }
     await fs.writeFile('./data/users.json', JSON.stringify(json, null, 4));
     res.send(json);
     // res.redirect('http://localhost:3000/');
 })
-
 
 app.listen(5010, () => console.log('server is running on port 5010'));

@@ -7,6 +7,7 @@ const User = () => {
 
     const [userEmail, setUserEmail] = useState('');
     const [users, setUsers] = useState([]);
+    const [country, setCountry] = useState("France");
 
     useEffect(() => {
         const getEmail = localStorage.getItem("email");

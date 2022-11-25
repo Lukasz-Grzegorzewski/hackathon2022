@@ -13,10 +13,10 @@
     flex-direction: column;
     gap: 20px;
 }
+
 .temp {
     margin-left: 40px;
 }
-
 .login-card {
     position: fixed;
     top: calc(var(--card-height) - var(--card-height) / 2);

@@ -12,41 +12,41 @@
     {
         "userId": "2",
         "name": "Amelie",
-        "surname": "Am",
+        "surname": "Guilloux",
         "genre": "female",
         "email": "am@am.am",
         "password": "2",
-        "dob": "1980-10-03",
+        "dob": "1990-02-28",
         "city": "Nantes"
     },
     {
         "userId": "3",
         "name": "Lukasz",
-        "surname": "Gr",
+        "surname": "Grzegorzewski",
         "genre": "male",
         "email": "lu@lu.lu",
         "password": "3",
-        "dob": "1979-10-03",
+        "dob": "1985-07-23",
         "city": "Nantes"
     },
     {
         "userId": "4",
         "name": "Baptiste",
-        "surname": "Bap",
+        "surname": "Courtin",
         "genre": "male",
         "email": "ba@ba.ba",
-        "password": "1",
-        "dob": "1979-10-03",
+        "password": "4",
+        "dob": "2001-10-29",
         "city": "Nantes"
     },
     {
         "userId": "5",
         "name": "Thibaud",
-        "surname": "Br",
+        "surname": "Brault",
         "genre": "male",
         "email": "th@th.th",
         "password": "1",
-        "dob": "1987-10-03",
+        "dob": "1999-02-10",
         "city": "Nantes"
     }
 ]
