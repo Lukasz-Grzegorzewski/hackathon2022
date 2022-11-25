@@ -1,33 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import '../styles/user.css';
+import axios from "axios";
 
-const User = ({ darkMode }) => {
+const User = () => {
 
-    const [firstname, setFirstname] = useState('Thibaud');
-    const [lastname, setLastname] = useState('Brault');
-    const [dob, setDob] = useState('10-02-1999');
-    const [city, setCity] = useState('Nantes');
-    const [country, setCountry] = useState('France');
-    const [gender, setGender] = useState('Male');
+    const [userEmail, setUserEmail] = useState('');
+    const [users, setUsers] = useState([]);
 
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [dob, setDob] = useState('');
+    const [city, setCity] = useState('');
+    const [country, setCountry] = useState('');
+    const [gender, setGender] = useState('');
+
+    useEffect(() => {
+        const getEmail = localStorage.getItem("email");
+        setUserEmail(JSON.parse(getEmail));
+    }, [userEmail])
+
+    useEffect(() => {
+        const source = axios.CancelToken.source();
+        axios
+            .get("http://localhost:5010/", {
+                cancelToken: source.token,
+            })
+            .then((res) => {
+                console.log("users.data", res.data);
+                setUsers(res.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        return () => {
+            source.cancel();
+        };
+    }, []);
+
+    const handleSubmit = () => {
         window.scrollTo(0, 0)
-        if (data.firstname) {
-            setFirstname(data.firstname)
-        }
-        if (data.lastname) {
-            setLastname(data.lastname)
-        }
-        if (data.gender) {
-            setGender(data.gender)
-        }
-        if (data.city) {
-            setCity(data.city)
-        }
-        reset()
     };
 
     const destinations = [
@@ -53,10 +66,6 @@ const User = ({ darkMode }) => {
         }
     ];
 
-    const handleClick = () => {
-        console.log('first')
-    }
-
     return (
         <main className="user">
             <section className="section section1">
@@ -66,10 +75,15 @@ const User = ({ darkMode }) => {
                         <div className="cardInside">
                             <div className="img" />
                             <div className="info">
-                                <p className="carac"><span>♥</span> coding</p>
-                                <h2 className="name">{firstname} <br /> {lastname}</h2>
-                                <p className="dob">{dob} - 23 ans</p >
-                                <p className="location">{city}, <span>{country}</span></p>
+                                {users.map(u => u.email === userEmail && (
+                                    <>
+                                        {console.log(u.name)}
+                                        <p className="carac"><span>♥</span> coding</p>
+                                        <h2 className="profileName">{u.name} <br /> {u.surname}</h2>
+                                        <p className="dob">{u.dob}</p >
+                                        <p className="location">{u.city}, <span>{country}</span></p>
+                                    </>
+                                ))}
                                 <Link className="link" to="/profile">Vos messages ➜</Link>
                             </div>
                         </div>
@@ -89,40 +103,34 @@ const User = ({ darkMode }) => {
             <section className="section section2">
                 <div id="details" className="details">
                     <h2>Modify your profile</h2>
-                    <form className="form" onSubmit={handleSubmit(onSubmit)}>
+                    <form action="localhost:5010/user" method="POST" className="form" onSubmit={handleSubmit}>
                         <div className="formContainer">
                             <div className="formInner firstname">
-                                <label htmlFor="firstname">Change first name</label>
-                                <input type="text" name="firstname" id="firstname" placeholder="New firstname" {...register("firstname")} />
+                                <label htmlFor="firstname">Changer prénom</label>
+                                <input type="text" name="firstname" id="firstname" placeholder="Nouveau prénom" />
                             </div>
                             <div className="formInner lastname">
-                                <label htmlFor="lastname">Change last name</label>
-                                <input type="text" name="lastname" id="lastname" placeholder="New lastname" {...register("lastname")} />
+                                <label htmlFor="lastname">Change nom</label>
+                                <input type="text" name="lastname" id="lastname" placeholder="Nouveau nom" />
                             </div>
                         </div>
                         <div className="formContainer">
                             <div className="formInner gender">
-                                <label htmlFor="sexe">Change gender</label>
-                                <select name="gender" id="gender" {...register("gender")}>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                <label htmlFor="sexe">Changer sexe</label>
+                                <select name="gender" id="gender">
+                                    <option value="male">Homme</option>
+                                    <option value="female">Femme</option>
                                 </select>
                             </div>
                         </div>
                         <div className="formContainer">
                             <div className="formInner city">
-                                <label htmlFor="name">Change city</label>
-                                <input type="text" name="city" id="city" placeholder="New city" {...register("city")} />
+                                <label htmlFor="name">Changer ville</label>
+                                <input type="text" name="city" id="city" placeholder="Nouvelle ville" />
                             </div>
                         </div>
                         <input className="submitButton" type="submit" value="Envoyer ✈" />
                     </form>
-                </div>
-                <a className="downBtn" href="#destinations">▾ parameters ▾</a>
-            </section>
-            <section className="section section3">
-                <div id="destinations">
-
                 </div>
             </section>
         </main>

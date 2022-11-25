@@ -25,7 +25,11 @@
     gap: 1rem;
 }
 
-.navbar .title .logo {
+.title a {
+    height: 100%;
+}
+
+.title a .logo {
     height: 100%;
 }
 

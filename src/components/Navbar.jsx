@@ -5,24 +5,27 @@ import { HiSun } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import "../styles/navbar.css";
 
-const Navbar = ({
-    authentification,
-    setAuthentification,
-    darkMode,
-    setDarkMode,
-}) => {
+const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }) => {
+
+    console.log(authentification)
     const navigate = useNavigate();
 
     const handleClick = () => {
-        setAuthentification(false);
-        navigate("/");
-    };
+        window.localStorage.setItem(
+            "authentification",
+            JSON.stringify(false)
+        );
+        setAuthentification(false)
+        navigate('/')
+    }
 
     return (
         <nav className="navbar">
             <div className="navbarContainer">
                 <div className="title">
-                    <img className="logo" src={logo} alt="logo" />
+                    <Link to='/home'>
+                        <img className="logo" src={logo} alt="logo" />
+                    </Link>
                 </div>
                 <div className="navbarInner">
                     <div className="toggle-mode">
@@ -40,10 +43,8 @@ const Navbar = ({
                     <div className="buttons">
                         {authentification ? (
                             <>
-                                <Link to="/Profile">Profil</Link>
-                                <button onClick={handleClick}>
-                                    Déconnexion
-                                </button>
+                                <Link to='/user'>Profil</Link>
+                                <button onClick={handleClick}>Déconnexion</button>
                             </>
                         ) : (
                             <Link to="/registration">S'enregistrer</Link>
