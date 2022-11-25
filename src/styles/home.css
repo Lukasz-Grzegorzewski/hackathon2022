@@ -14,7 +14,6 @@
     left: 0;
     z-index: -1;
     background: url("../assets/camera.jpg") center/cover no-repeat;
-
 }
 
 .homePage .profil {
@@ -32,6 +31,7 @@
     padding: 8px;
     gap: 5vw;
     justify-content: space-around;
+    color: var(--front);
 }
 
 .homePage .genderFilter,
@@ -49,7 +49,6 @@
     background-color: var(--orange);
     width: 15vw;
     box-shadow: 2px 2px 0 #212121;
-
 }
 
 .homePage .filtersContainer option {
@@ -79,7 +78,6 @@
 }
 
 @media screen and (max-width: 600px) {
-
     .homePage .profil {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -89,5 +87,4 @@
         margin-right: 5%;
         margin-top: 0;
     }
-
 }

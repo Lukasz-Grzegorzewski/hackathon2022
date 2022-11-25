@@ -5,14 +5,18 @@ import { HiSun } from "react-icons/hi";
 import logo from "../assets/logo.png";
 import "../styles/navbar.css";
 
-const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }) => {
-
+const Navbar = ({
+    authentification,
+    setAuthentification,
+    darkMode,
+    setDarkMode,
+}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        setAuthentification(false)
-        navigate('/')
-    }
+        setAuthentification(false);
+        navigate("/");
+    };
 
     return (
         <nav className="navbar">
@@ -36,17 +40,19 @@ const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }
                     <div className="buttons">
                         {authentification ? (
                             <>
-                                <Link to='/Profile'>Profil</Link>
-                                <button onClick={handleClick}>Déconnexion</button>
+                                <Link to="/Profile">Profil</Link>
+                                <button onClick={handleClick}>
+                                    Déconnexion
+                                </button>
                             </>
                         ) : (
-                            <Link to='/registration'>S'enregistrer</Link>
+                            <Link to="/registration">S'enregistrer</Link>
                         )}
                     </div>
                 </div>
             </div>
         </nav>
-    )
+    );
 };
 
 export default Navbar;
