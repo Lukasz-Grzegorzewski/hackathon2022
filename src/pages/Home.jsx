@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import MiniCard from "../components/MiniCard";
 import "../styles/home.css";
-import imageC from "../assets/camera.jpg";
 
 const Home = ({ list }) => {
     const [allPeople, setAllPeople] = useState(list);
     const [gender, setGender] = useState("all");
     const [location, setLocation] = useState("");
-    const [age, setAge] = useState("all")
+    const [age, setAge] = useState("all");
     const getUnique = (array) => {
         let unique = [];
 
@@ -28,10 +27,9 @@ const Home = ({ list }) => {
         return unique;
     };
     return (
-        <div>
-            <div>
-                <h1 className="titre">AdopteUnGuide</h1>
-                <img className="bandeauImage" src={imageC} alt="bandeauImage" />
+        <div >
+            <div className="bandeauImage">
+                <h1 className="headerTitre">AdopteUnGuide</h1>
             </div>
             <div className="filtersContainer">
                 <h2>Filtrer par...</h2>
@@ -61,23 +59,32 @@ const Home = ({ list }) => {
                     <select onChange={(e) => setLocation(e.target.value)}>
                         <option value="">Tous</option>
                         {getUnique(allPeople).map((each, index) => (
-                            <option key={index} value={each}>{each}</option>
+                            <option key={index} value={each}>
+                                {each}
+                            </option>
                         ))}
                     </select>
                 </div>
             </div>
-           
-            <div className="profil">
 
+            <div className="profil">
                 {allPeople
-                    .filter((each) => gender !== "all" ? each.gender === gender : each.gender.includes('male'))
                     .filter((each) =>
-                        each.location.country.includes(location)
-                    ).filter((each) => age !== "all" ? each.dob.age <= age && each.dob.age > (age - 15) : each.dob.age <= 90)
+                        gender !== "all"
+                            ? each.gender === gender
+                            : each.gender.includes("male")
+                    )
+                    .filter((each) => each.location.country.includes(location))
+                    .filter((each) =>
+                        age !== "all"
+                            ? each.dob.age <= age && each.dob.age > age - 15
+                            : each.dob.age <= 90
+                    )
                     .map((user, index) => (
                         <MiniCard key={index} user={user} />
+
                     ))
-               }
+                }
 
             </div>
         </div>

@@ -22,7 +22,7 @@ const Login = () => {
           action="http://localhost:5010/registration" 
           method="post"
           className="reg-form"
-          onSubmit={(e) => {
+          onSubmit={() => {
             // navigate("/");
           }}
         >

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/card.css";
 import Message from "../components/BigCard/Message";
 
@@ -7,11 +8,13 @@ import logoHomme from "../assets/male.png";
 
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
-import { HiMoon } from "react-icons/hi";
-import { HiSun } from "react-icons/hi";
 import { AiFillHeart } from "react-icons/ai";
 
-const Card = ({ user, setDarkMode, darkMode }) => {
+const Card = () => {
+    // useLocation pour reprendre avec un Link
+    const location = useLocation();
+    const { user } = location.state;
+
     const [isFavorite, setIsFavorite] = useState(false);
 
     const [oneMessage, setOneMessage] = useState("");
@@ -56,19 +59,6 @@ const Card = ({ user, setDarkMode, darkMode }) => {
 
     return (
         <div className="big-card">
-            <div className="toggle-mode">
-                <input
-                    type="checkbox"
-                    id="toggle"
-                    onChange={() => setDarkMode(!darkMode)}
-                />
-                <label class="toggle" for="toggle">
-                    <HiSun className="sun icon" />
-                    <HiMoon className="moon icon" />
-                    <span className="ball"></span>
-                </label>
-            </div>
-
             <div className="container-image">
                 <img src={user.picture.large} alt="utilisateur" />
                 <div className="gender-user">
