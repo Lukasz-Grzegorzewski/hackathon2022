@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display&display&display=swap");
 
 :root {
     --green: #7fb77e;
@@ -6,6 +6,26 @@
     --orange: #ffc090;
     --title: "Mochiy Pop One", sans-serif;
     --text: "Montserrat", sans-serif;
+}
+
+.light {
+    --front: rgb(30, 30, 30);
+    --back: var(--yellow);
+
+    --backgray: rgb(240, 240, 240);
+    --frontgray: rgb(190, 190, 190);
+
+    --textcolor: black;
+}
+
+.dark {
+    --front: var(--yellow);
+    --back: rgb(30, 30, 30);
+
+    --backgray: rgb(190, 190, 190);
+    --frontgray: rgb(240, 240, 240);
+
+    --textcolor: white;
 }
 
 *,

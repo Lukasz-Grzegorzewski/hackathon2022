@@ -1,0 +1,91 @@
+.toggle-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-mode input#toggle {
+    display: none;
+}
+
+.toggle-mode label.toggle {
+    cursor: pointer;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px black solid;
+    border-radius: 500px;
+    height: 50px;
+    width: 100px;
+
+    transition: 0.3s;
+}
+
+.toggle-mode label.toggle .icon {
+    width: 50%;
+    font-size: 30px;
+    text-align: center;
+    z-index: 5;
+}
+
+.toggle-mode label.toggle .ball {
+    position: absolute;
+
+    margin: 3px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: gray;
+
+    transition: 0.3s ease-in-out;
+}
+
+/* -- light -- */
+
+.light {
+    background-color: white;
+}
+
+.light .toggle-mode label.toggle {
+    background: linear-gradient(
+        -145deg,
+        rgba(0, 0, 0, 0.3),
+        rgb(236, 236, 236)
+    );
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.light .toggle-mode label.toggle .sun {
+    color: white;
+}
+
+.light .toggle-mode label.toggle .moon {
+    color: black;
+}
+
+.light .toggle-mode label.toggle .ball {
+    background-color: black;
+}
+
+/* -- dark -- */
+
+.dark {
+    background-color: black;
+}
+
+.dark .toggle-mode label.toggle {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), black);
+    box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1);
+}
+
+.dark .toggle-mode label.toggle .sun {
+    color: white;
+}
+
+.dark .toggle-mode label.toggle .ball {
+    background-color: white;
+    transform: translateX(50px);
+}
