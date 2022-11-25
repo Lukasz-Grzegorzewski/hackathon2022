@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import MiniCard from "../components/MiniCard";
 import "../styles/home.css";
-import imageC from "../assets/camera.jpg";
 
 const Home = ({ list }) => {
     const [allPeople, setAllPeople] = useState(list);
@@ -28,10 +27,9 @@ const Home = ({ list }) => {
         return unique;
     };
     return (
-        <div>
-            <div>
-                <h1 className="titre">AdopteUnGuide</h1>
-                <img className="bandeauImage" src={imageC} alt="bandeauImage" />
+        <div >
+            <div className="bandeauImage">
+                <h1 className="headerTitre">AdopteUnGuide</h1>
             </div>
             <div className="filtersContainer">
                 <h2>Filtrer par...</h2>
@@ -66,7 +64,7 @@ const Home = ({ list }) => {
                     </select>
                 </div>
             </div>
-           
+
             <div className="profil">
 
                 {allPeople
@@ -77,7 +75,7 @@ const Home = ({ list }) => {
                     .map((user, index) => (
                         <MiniCard key={index} user={user} />
                     ))
-               }
+                }
 
             </div>
         </div>
