@@ -35,8 +35,8 @@
 }
 
 .filtersContainer {
-    margin: 10px 10vw;
-    width: 80vw;
+    margin: 10px 5vw;
+    width: 90vw;
     display: flex;
     padding: 8px;
     gap: 5vw;
@@ -49,11 +49,33 @@
     padding: 0 8px;
     width: 15vw;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1vw;
 }
 
 .filtersContainer select {
     background-color: var(--orange);
+    width: 15vw;
+    box-shadow: 2px 2px 0 #212121;
+
+}
+
+.filtersContainer option {
+    appearance: none;
+    background-color: #ffdeca;
+}
+
+.filtersContainer option:checked {
+    appearance: none;
+    background: var(--orange);
+    color: white;
+}
+
+.filtersContainer option:hover {
+    appearance: none;
+    background: var(--orange);
+    color: white;
 }
 
 .filtersContainer h4 {
