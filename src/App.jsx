@@ -16,32 +16,32 @@ import './styles/app.css'
 // import users from "./data/users.json";
 
 function App() {
-    const [list, setList] = useState([]);
+  const [list, setList] = useState([]);
 
-    // pour un user
-    const [user, setUser] = useState([]);
+  // pour un user
+  const [user, setUser] = useState([]);
 
-    //authentification login
-    const [authentification, setAuthentification] = useState(false);
-    const authEnter = () => {
-        setAuthentification(!authentification);
-    };
+  //authentification login
+  const [authentification, setAuthentification] = useState(false);
+  const authEnter = () => {
+    setAuthentification(!authentification);
+  };
 
-    // toggle dark/light mode
-    const [darkMode, setDarkMode] = useState(false);
-    const navigate = useNavigate();
+  // toggle dark/light mode
+  const [darkMode, setDarkMode] = useState(false);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const data = localStorage.getItem("authentification");
-        setAuthentification(JSON.parse(data));
-        console.log("saved: ", data);
-    }, [authentification])
+  useEffect(() => {
+    const data = localStorage.getItem("authentification");
+    setAuthentification(JSON.parse(data));
+    console.log("saved: ", data);
+  }, [authentification])
 
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
       .get(
-        "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=50",
+        "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=200",
         {
           cancelToken: source.token,
         }
@@ -59,41 +59,41 @@ function App() {
     };
   }, []);
 
-    return (
-        <div className={darkMode ? "dark app" : "light app"}>
-            <Navbar setDarkMode={setDarkMode} darkMode={darkMode} authentification={authentification} setAuthentification={setAuthentification} />
-            <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <Login
-                            authentification={authentification}
-                            authEnter={() => authEnter()}
-                        />
-                    }
-                />
-                <Route
-                    path="/registration"
-                    element={
-                        <Registration />
-                    }
-                />
-                {authentification ? (
-                    <>
-                        <Route
-                            path="/home"
-                            element={list.length !== 0 && <Home list={list} />}
-                        />
-                        <Route path="/card" element={<Card />} />
-                        <Route path="/user" element={<User />} />
-                    </>
-                ) : (
-                    <Route path="/*" element={<Page404 />} />
-                )}
-            </Routes>
-            <Footer />
-        </div>
-    );
+  return (
+    <div className={darkMode ? "dark app" : "light app"}>
+      <Navbar setDarkMode={setDarkMode} darkMode={darkMode} authentification={authentification} setAuthentification={setAuthentification} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Login
+              authentification={authentification}
+              authEnter={() => authEnter()}
+            />
+          }
+        />
+        <Route
+          path="/registration"
+          element={
+            <Registration />
+          }
+        />
+        {authentification ? (
+          <>
+            <Route
+              path="/home"
+              element={list.length !== 0 && <Home list={list} />}
+            />
+            <Route path="/card" element={<Card />} />
+            <Route path="/user" element={<User />} />
+          </>
+        ) : (
+          <Route path="/*" element={<Page404 />} />
+        )}
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
