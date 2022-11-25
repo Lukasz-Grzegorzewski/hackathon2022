@@ -1,81 +1,77 @@
 :root {
-  --card-height: 60%;
-  --card-width: 50%;
-}
-
-.uhelp-users{
-  position: absolute;
-}
-
-.users-temp {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.temp{
-  margin-left: 40px;
+    --card-height: 60%;
+    --card-width: 50%;
 }
 
 .login-container {
+    color: var(--front);
+    background-color: var(--back);
+}
+
+.users-temp {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.temp {
+    margin-left: 40px;
 }
 
 .login-card {
-  position: fixed;
-  top: calc(var(--card-height) - var(--card-height) / 2);
-  left: calc(var(--card-width) - var(--card-width) / 2);
-  width: var(--card-width);
-  height: 25%;
-  padding: 5%;
-  border: 1px solid #f7f6dc;
-  box-shadow: 0 0 20px #f7f6dc, 0 0 10px #ffc090;
-  border-radius: 10px;
+    position: fixed;
+    top: calc(var(--card-height) - var(--card-height) / 2);
+    left: calc(var(--card-width) - var(--card-width) / 2);
+    width: var(--card-width);
+    padding: 5%;
+    border: 1px solid #f7f6dc;
+    box-shadow: 0 0 20px #f7f6dc, 0 0 10px #ffc090;
+    border-radius: 10px;
 }
 
 .form-login {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .element-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .form-login input {
-  cursor: pointer;
-  height: 30px;
-  border: 1px solid #f7f6dc;
-  border-radius: 5px;
-  padding-left: 10px;
+    cursor: pointer;
+    height: 30px;
+    border: 1px solid #f7f6dc;
+    border-radius: 5px;
+    padding-left: 10px;
 }
 
 .form-login .submitBtn-container {
-  margin-top: 3%;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .form-login .submitBtn {
-  cursor: pointer;
-  box-shadow: 5px 5px 7px rgb(141, 137, 137);
-  width: 25%;
-  height: 50px;
-  border-radius: 8px;
-  background-color: var(--orange);
+    cursor: pointer;
+    box-shadow: 5px 5px 7px rgb(141, 137, 137);
+    height: 50px;
+    padding: 0 1rem;
+    border-radius: 8px;
+    background-color: var(--orange);
 }
 
 .error {
-  position: relative;
-  background-color: rgba(255, 0, 0, 0.306);
+    position: relative;
+    background-color: rgba(255, 0, 0, 0.306);
 }
 
-.h1-no-error{
+.h1-no-error {
     display: none;
 }
 
-.h1-error{
+.h1-error {
     width: 100%;
     text-align: center;
 
