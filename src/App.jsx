@@ -75,7 +75,9 @@ function App() {
                 <Route
                     path="/registration"
                     element={
+
                         <Registration />
+
                     }
                 />
                 {authentification ? (
