@@ -2,14 +2,19 @@ import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { HiMoon } from "react-icons/hi";
 import { HiSun } from "react-icons/hi";
-import logo from "../assets/logo4.png";
+import logo from "../assets/logo.png";
 import "../styles/navbar.css";
 
 const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }) => {
 
+    console.log(authentification)
     const navigate = useNavigate();
 
     const handleClick = () => {
+        window.localStorage.setItem(
+            "authentification",
+            JSON.stringify(false)
+        );
         setAuthentification(false)
         navigate('/')
     }
@@ -18,7 +23,9 @@ const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }
         <nav className="navbar">
             <div className="navbarContainer">
                 <div className="title">
-                    <img className="logo" src={logo} alt="logo" />
+                    <Link to='/home'>
+                        <img className="logo" src={logo} alt="logo" />
+                    </Link>
                 </div>
                 <div className="navbarInner">
                     <div className="toggle-mode">
@@ -36,7 +43,7 @@ const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }
                     <div className="buttons">
                         {authentification ? (
                             <>
-                                <Link to='/Profile'>Profil</Link>
+                                <Link to='/user'>Profil</Link>
                                 <button onClick={handleClick}>Déconnexion</button>
                             </>
                         ) : (
