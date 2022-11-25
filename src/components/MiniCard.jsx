@@ -13,8 +13,13 @@ const MiniCard = ({ user }) => {
 
     return (
         <div>
-            <Link to="/card" state={{ user }}>
-                <div className="carte-profil">
+            <div className="carte-profil">
+                <div
+                    onClick={handleClickFavorite}
+                    className={isFavorite ? "isFavorite" : "notFavorite"}
+                ></div>
+
+                <Link to="/card" state={{ user }}>
                     <div className="cadre-photo">
                         <div className="sexe">
                             {user.gender === "female" ? (
@@ -31,14 +36,6 @@ const MiniCard = ({ user }) => {
                                 />
                             )}
                         </div>
-
-                        <div
-                            id="favorite"
-                            onClick={handleClickFavorite}
-                            className={
-                                isFavorite ? "isFavorite" : "notFavorite"
-                            }
-                        />
 
                         <img
                             className="personne"
@@ -57,8 +54,8 @@ const MiniCard = ({ user }) => {
                             {user.location.country}, {user.location.city}
                         </div>
                     </div>
-                </div>
-            </Link>
+                </Link>
+            </div>
         </div>
     );
 };

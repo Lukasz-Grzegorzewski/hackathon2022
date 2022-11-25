@@ -34,7 +34,7 @@
     background-size: 100%;
     align-self: flex-start;
     background-repeat: no-repeat;
-    z-index: 10;
+    z-index: 5;
 }
 
 .carte-profil .notFavorite {
@@ -47,7 +47,8 @@
     background-size: 100%;
     align-self: flex-start;
     background-repeat: no-repeat;
-    z-index: 10;
+    cursor: alias;
+    z-index: 5;
 }
 
 .carte-profil .sexe .femme {
