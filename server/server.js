@@ -32,7 +32,8 @@ app.post("/registration", async (req, res) => {
     
     json.push(body);
     await fs.writeFile('./data/users.json', JSON.stringify(json, null, 4));
-    res.send(json);
+    // res.send(json);
+    res.redirect('http://localhost:3000/');
 })
 
 
