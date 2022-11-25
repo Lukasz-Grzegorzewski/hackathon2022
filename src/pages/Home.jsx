@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import MiniCard from "../components/MiniCard";
 import "../styles/home.css";
 import imageC from "../assets/camera.jpg";
 
-const Home = () => {
-    const [allPeople, setAllPeople] = useState([]);
-
-    const getAllPeople = () => {
-        axios
-            .get(
-                "https://randomuser.me/api/?inc=gender,name,location,dob,picture&results=500"
-            )
-            .then((response) => response.data)
-            .then((data) => {
-                setAllPeople(data.results);
-            })
-            .catch((error) => {
-                console.error(error.message);
-            });
-    };
-    useEffect(() => {
-        getAllPeople();
-    }, []);
-
-    const [gender, setGender] = useState("");
+const Home = ({ list }) => {
+    const [allPeople, setAllPeople] = useState(list);
+    const [gender, setGender] = useState("all");
     const [location, setLocation] = useState("");
     const [age, setAge] = useState("all")
     const getUnique = (array) => {
@@ -49,6 +30,7 @@ const Home = () => {
     return (
         <div>
             <div>
+                <h1 className="titre">AdopteUnGuide</h1>
                 <img className="bandeauImage" src={imageC} alt="bandeauImage" />
             </div>
             <div className="filtersContainer">
@@ -84,7 +66,9 @@ const Home = () => {
                     </select>
                 </div>
             </div>
-            <div>
+           
+            <div className="profil">
+
                 {allPeople
                     .filter((each) => gender !== "all" ? each.gender === gender : each.gender.includes('male'))
                     .filter((each) =>
@@ -93,7 +77,8 @@ const Home = () => {
                     .map((user, index) => (
                         <MiniCard key={index} user={user} />
                     ))
-                }
+               }
+
             </div>
         </div>
     );

@@ -7,8 +7,11 @@ import logoHomme from "../assets/male.png";
 
 import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
+import { HiMoon } from "react-icons/hi";
+import { HiSun } from "react-icons/hi";
+import { AiFillHeart } from "react-icons/ai";
 
-const Card = ({ user }) => {
+const Card = ({ user, setDarkMode, darkMode }) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
     const [oneMessage, setOneMessage] = useState("");
@@ -46,13 +49,26 @@ const Card = ({ user }) => {
         event.preventDefault();
         if (oneMessage !== "") {
             setAllMessage((oldArray) => [...oldArray, oneMessage]);
-            setEmote(!emote);
+            setEmote(false);
         }
         setOneMessage("");
     };
 
     return (
         <div className="big-card">
+            <div className="toggle-mode">
+                <input
+                    type="checkbox"
+                    id="toggle"
+                    onChange={() => setDarkMode(!darkMode)}
+                />
+                <label class="toggle" for="toggle">
+                    <HiSun className="sun icon" />
+                    <HiMoon className="moon icon" />
+                    <span class="ball"></span>
+                </label>
+            </div>
+
             <div className="container-image">
                 <img src={user.picture.large} alt="utilisateur" />
                 <div className="gender-user">
@@ -65,7 +81,9 @@ const Card = ({ user }) => {
                     <div
                         className={isFavorite ? "isFavorite" : "notFavorite"}
                         onClick={() => handleFavorite()}
-                    ></div>
+                    >
+                        <AiFillHeart className="heart icon" />
+                    </div>
                 </div>
             </div>
 
@@ -89,7 +107,7 @@ const Card = ({ user }) => {
                         Bonjour, ça va? Moi ouais
                     </p>
                     <p className="message left-conv">
-                        au calme, on est là, tu connais"
+                        au calme, on est là, tu connais ^^
                     </p>
                     {allMessage.map((each, index) => (
                         <Message key={index} each={each} />

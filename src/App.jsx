@@ -27,6 +27,10 @@ function App() {
   }
 
 
+    // toggle dark/light mode
+    const [darkMode, setDarkMode] = useState(true);
+    const navigate = useNavigate();
+
   useEffect(() => {
     const source = axios.CancelToken.source();
     axios
@@ -50,42 +54,43 @@ function App() {
     };
   }, []);
 
-  return (
-    <>
-      <Navbar setAuthentification={setAuthentification} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Login
-              authentification={authentification}
-              authEnter={() => authEnter()}
-            />
-          }
-        />
-        <Route
-          path="/registration"
-          element={
-            <Registration />
-          }
-        />
-        
-        {authentification ? (
-          <>
-            <Route path="/home" element={<Home />} />
-            <Route
-              path="/card"
-              element={user.length !== 0 && <Card user={user} />}
-            />
-            <Route path="/user" element={<User />} />
-          </>
-        ) : (
-          <Route path="/*" element={<Page404 />} />
-        )}
-      </Routes>
-      <Footer />
-    </>
-  );
+    return (
+        <div className={darkMode ? "dark" : "light"}>
+            <Navbar setAuthentification={setAuthentification} />
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <Login
+                          authentification={authentification}
+                          authEnter={() => authEnter()}
+                        />
+                    }
+                />
+                {authentification ? (
+                    <>
+                        <Route path="/home" element={list.length !== 0 && <Home list={list} />} />
+                        <Route
+                            path="/card"
+                            element={
+                                user.length !== 0 && (
+                                    <Card
+                                        user={user}
+                                        setDarkMode={setDarkMode}
+                                        darkMode={darkMode}
+                                    />
+                                )
+                            }
+                        />
+                        <Route path="/user" element={<User />} />
+                    </>
+                ) : (
+                    <Route path="/*" element={<Page404 />} />
+                )}
+            </Routes>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
