@@ -14,7 +14,6 @@
     left: 0;
     z-index: -1;
     background: url("../assets/camera.jpg") center/cover no-repeat;
-
 }
 
 .homePage .profil {
@@ -60,7 +59,7 @@
     background-color: var(--orange);
     width: 15vw;
     box-shadow: 2px 2px 0 #212121;
-
+    cursor: pointer;
 }
 
 .homePage .filtersContainer option {
@@ -92,7 +91,6 @@
 }
 
 @media screen and (max-width: 600px) {
-
     .homePage .profil {
         display: grid;
         grid-template-columns: 1fr 1fr;
