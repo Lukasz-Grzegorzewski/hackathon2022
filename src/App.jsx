@@ -56,7 +56,7 @@ function App() {
 
     return (
         <div className={darkMode ? "dark" : "light"}>
-            <Navbar setAuthentification={setAuthentification} />
+            <Navbar setDarkMode={setDarkMode} darkMode={darkMode} authentification={authentification} setAuthentification={setAuthentification} />
             <Routes>
                 <Route
                     path="/"
@@ -79,13 +79,11 @@ function App() {
                                 user.length !== 0 && (
                                     <Card
                                         user={user}
-                                        setDarkMode={setDarkMode}
-                                        darkMode={darkMode}
                                     />
                                 )
                             }
                         />
-                        <Route path="/user" element={<User />} />
+                        <Route path="/profile" element={<User darkMode={darkMode} />} />
                     </>
                 ) : (
                     <Route path="/*" element={<Page404 />} />
