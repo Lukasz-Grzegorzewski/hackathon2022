@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import '../styles/user.css';
 import axios from "axios";
 
@@ -8,13 +7,6 @@ const User = () => {
 
     const [userEmail, setUserEmail] = useState('');
     const [users, setUsers] = useState([]);
-
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [dob, setDob] = useState('');
-    const [city, setCity] = useState('');
-    const [country, setCountry] = useState('');
-    const [gender, setGender] = useState('');
 
     useEffect(() => {
         const getEmail = localStorage.getItem("email");
