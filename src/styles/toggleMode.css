@@ -1,0 +1,79 @@
+.toggle-mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.toggle-mode input#toggle {
+    display: none;
+}
+
+.toggle-mode label.toggle {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--green);
+    border-radius: 500px;
+    height: 30px;
+    width: 60px;
+    transition: 0.3s ease-in-out;
+}
+
+.toggle-mode label.toggle .icon {
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    z-index: 5;
+}
+
+.toggle-mode label.toggle .ball {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+/* -- light -- */
+
+.light {
+    background-color: white;
+}
+
+.light .toggle-mode label.toggle {
+    background: white;
+}
+
+.light .toggle-mode label.toggle .sun {
+    color: white;
+}
+
+.light .toggle-mode label.toggle .moon {
+    color: black;
+}
+
+.light .toggle-mode label.toggle .ball {
+    background-color: black;
+}
+
+/* -- dark -- */
+
+.dark {
+    background-color: black;
+}
+
+.dark .toggle-mode label.toggle {
+    background: black;
+}
+
+.dark .toggle-mode label.toggle .sun {
+    color: white;
+}
+
+.dark .toggle-mode label.toggle .ball {
+    background-color: white;
+    transform: translateX(30px);
+}
