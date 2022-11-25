@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className="login-container">
 
-      <div className="login-card">
+      <div className="register-card">
         <form
           action="http://localhost:5010/registration"
           method="post"
@@ -35,6 +35,7 @@ const Login = () => {
               type="text"
               name="name"
               placeholder="Votre prénom"
+              className="registerInput"
             />
           </div>
           <div className="surname-container el-reg-form">
@@ -46,6 +47,7 @@ const Login = () => {
               type="text"
               name="surname"
               placeholder="Votre nom"
+              className="registerInput"
             />
           </div>
           <div className="email-container el-reg-form">
@@ -57,6 +59,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Votre email"
+              className="registerInput"
             />
           </div>
           <div className="genre-container el-reg-form">
@@ -78,6 +81,7 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Votre mot de passe"
+              className="registerInput"
             />
           </div>
           <div className="dateOfBirth-container el-reg-form">
@@ -96,6 +100,7 @@ const Login = () => {
               type="text"
               name="city"
               placeholder="Votre ville"
+              className="registerInput"
             />
           </div>
 
