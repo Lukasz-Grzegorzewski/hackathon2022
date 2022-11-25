@@ -15,7 +15,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="login-container">
+    <div className="login-container registration-container">
 
       <div className="login-card">
         <form

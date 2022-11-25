@@ -17,10 +17,12 @@
 }
 
 .login-container {
+  width: 100vw;
+  height:calc( 100vh - 71px);
 }
 
 .login-card {
-  position: fixed;
+  position: relative;
   top: calc(var(--card-height) - var(--card-height) / 2);
   left: calc(var(--card-width) - var(--card-width) / 2);
   width: var(--card-width);

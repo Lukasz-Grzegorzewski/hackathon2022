@@ -3,7 +3,6 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { HiMoon } from "react-icons/hi";
 import { HiSun } from "react-icons/hi";
 import logo from "../assets/logo.png";
-import logo from "../assets/logo.png";
 import "../styles/navbar.css";
 
 const Navbar = ({
