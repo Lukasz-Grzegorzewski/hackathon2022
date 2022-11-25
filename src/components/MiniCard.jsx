@@ -12,7 +12,9 @@ const MiniCard = ({ user }) => {
     }
 
     return (
-        <div>
+        <div className="leTout">
+
+
             <div className="carte-profil">
                 <div
                     onClick={handleClickFavorite}
@@ -20,6 +22,7 @@ const MiniCard = ({ user }) => {
                 ></div>
 
                 <Link to="/card" state={{ user }}>
+
                     <div className="cadre-photo">
                         <div className="sexe">
                             {user.gender === "female" ? (
@@ -51,7 +54,13 @@ const MiniCard = ({ user }) => {
                         </div>
 
                         <div className="pays">
-                            {user.location.country}, {user.location.city}
+                            <div className="country">
+                            {user.location.country}
+                            </div>
+
+                            <div className="city">
+                             {user.location.city}
+                             </div>
                         </div>
                     </div>
                 </Link>
