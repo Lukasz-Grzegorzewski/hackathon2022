@@ -26,16 +26,6 @@ html {
     justify-content: center;
 }
 
-.section .downBtn {
-    position: absolute;
-    bottom: 7vh;
-    left: 50%;
-    transform: translateX(-50%);
-    text-transform: capitalize;
-    font-weight: 700;
-    color: var(--green);
-}
-
 .section .cards {
     position: relative;
     display: flex;
@@ -91,7 +81,7 @@ html {
     border-bottom-right-radius: 25px;
 }
 
-.info .name {
+.info .profileName {
     margin-top: 2.5rem;
     font-size: 2rem;
     color: var(--green);
