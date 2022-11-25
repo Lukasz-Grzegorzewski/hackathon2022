@@ -87,6 +87,7 @@
 .carte-profil .firtsName {
     color: var(--green);
     font-family: var(--title);
+    margin-bottom: 0.25rem;
 }
 
 .carte-profil .pays {
