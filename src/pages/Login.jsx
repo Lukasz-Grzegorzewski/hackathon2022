@@ -62,7 +62,7 @@ const Login = ({ authentification, authEnter }) => {
             <ul className="ul">
               <li>Email:</li>
               <li className="temp">{user.email}</li>
-              <li>Password:</li>
+              <li>Mot de passe:</li>
               <li className="temp">{user.password}</li>
             </ul>
           </div>
@@ -72,7 +72,7 @@ const Login = ({ authentification, authEnter }) => {
         <form className="form-login" onSubmit={(e) => e.preventDefault()}>
           <div className="email-container element-form">
             <h2 className={!error ? "h1-no-error" : "h1-error"}>
-              Wrong Email or Password
+              Email ou mot de passe erroné
             </h2>
             <label className="email-label" htmlFor="email-input">
               Email
@@ -87,7 +87,7 @@ const Login = ({ authentification, authEnter }) => {
           </div>
 
           <div className="password-container element-form">
-            <label htmlFor="password-input">Password</label>
+            <label htmlFor="password-input">Mot de passe</label>
             <input
               className={!error ? "password-input" : "password-input error"}
               type="password"
@@ -106,7 +106,7 @@ const Login = ({ authentification, authEnter }) => {
               }}
               type="submit"
             >
-              LOGIN
+              CONNEXION
             </button>
           </div>
         </form>

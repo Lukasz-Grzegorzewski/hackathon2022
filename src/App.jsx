@@ -11,6 +11,7 @@ import User from "./pages/User";
 import Card from "./pages/Card";
 import Registration from "./pages/Registration";
 import Page404 from "./components/Page404";
+import './styles/app.css'
 
 // import users from "./data/users.json";
 
@@ -74,8 +75,9 @@ function App() {
                 <Route
                     path="/registration"
                     element={
-                        <Registration
-                        />
+
+                        <Registration />
+
                     }
                 />
                 {authentification ? (
