@@ -3,10 +3,17 @@
   --card-width: 50%;
 }
 
+.uhelp-users{
+  position: absolute;
+}
+
 .users-temp {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+.temp{
+  margin-left: 40px;
 }
 
 .login-container {
