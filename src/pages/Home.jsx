@@ -32,37 +32,39 @@ const Home = ({ list }) => {
                 <h1 className="headerTitre">AdopteUnGuide</h1>
             </div>
             <div className="filtersContainer">
-                <h2>Filtrer par...</h2>
-                <div className="countryFilter">
-                    <h4>Localisation</h4>
-                    <select onChange={(e) => setLocation(e.target.value)}>
-                        <option value="">Tous</option>
-                        {getUnique(allPeople).map((each, index) => (
-                            <option key={index} value={each}>
-                                {each}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-                <div className="genderFilter">
-                    <h4>Genre</h4>
-                    <select onChange={(e) => setGender(e.target.value)}>
-                        <option value="all">Tous</option>
-                        <option value="female">Femmes</option>
-                        <option value="male">Hommes</option>
-                    </select>
-                </div>
-                <div className="ageFilter">
-                    <h4>Âge</h4>
-                    <div className="ageFilterContainer">
-                        <select onChange={(e) => setAge(e.target.value)}>
-                            <option value="all">Tous</option>
-                            <option value="30">18-30 ans</option>
-                            <option value="45">30-45 ans</option>
-                            <option value="60">45-60 ans</option>
-                            <option value="75">60-75 ans</option>
-                            <option value="90">75-90 ans</option>
+                <h2>Filtrer par  :</h2>
+                <div className="filtersSmallContainer">
+                    <div className="countryFilter">
+                        <h4>Localisation</h4>
+                        <select onChange={(e) => setLocation(e.target.value)}>
+                            <option value="">Tous</option>
+                            {getUnique(allPeople).map((each, index) => (
+                                <option key={index} value={each}>
+                                    {each}
+                                </option>
+                            ))}
                         </select>
+                    </div>
+                    <div className="genderFilter">
+                        <h4>Genre</h4>
+                        <select onChange={(e) => setGender(e.target.value)}>
+                            <option value="all">Tous</option>
+                            <option value="female">Femmes</option>
+                            <option value="male">Hommes</option>
+                        </select>
+                    </div>
+                    <div className="ageFilter">
+                        <h4>Âge</h4>
+                        <div className="ageFilterContainer">
+                            <select onChange={(e) => setAge(e.target.value)}>
+                                <option value="all">Tous</option>
+                                <option value="30">18-30 ans</option>
+                                <option value="45">30-45 ans</option>
+                                <option value="60">45-60 ans</option>
+                                <option value="75">60-75 ans</option>
+                                <option value="90">75-90 ans</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
