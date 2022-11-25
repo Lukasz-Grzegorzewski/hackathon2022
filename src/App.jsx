@@ -71,12 +71,6 @@ function App() {
                         />
                     }
                 />
-                <Route
-                    path="/registration"
-                    element={
-                        <Registration />
-                    }
-                />
                 {authentification ? (
                     <>
                         <Route
@@ -84,12 +78,11 @@ function App() {
                             element={list.length !== 0 && <Home list={list} />}
                         />
                         <Route path="/card" element={<Card />} />
-                        <Route path="/user" element={<User darkMode={darkMode} />} />
+                        <Route path="/user" element={<User />} />
                     </>
                 ) : (
                     <Route path="/*" element={<Page404 />} />
                 )}
-                <Route path='/profile' element={<User />} />
             </Routes>
             <Footer />
         </div>

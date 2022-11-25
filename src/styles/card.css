@@ -1,5 +1,6 @@
 .big-card {
     background-color: var(--back);
+    height: 100%;
     width: 100%;
 
     display: flex;
@@ -17,7 +18,6 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
-    padding-top: 10vh;
 
     display: flex;
     flex-direction: column;
