@@ -13,6 +13,7 @@ const MiniCard = ({ user }) => {
 
     return (
         <div>
+        <div className="leTout">
             <Link to="/card" state={{ user }}>
                 <div className="carte-profil">
                     <div className="cadre-photo">
@@ -54,11 +55,18 @@ const MiniCard = ({ user }) => {
                         </div>
 
                         <div className="pays">
-                            {user.location.country}, {user.location.city}
+                            <div className="country">
+                            {user.location.country}
+                            </div>
+
+                            <div className="city">
+                             {user.location.city}
+                             </div>
                         </div>
                     </div>
                 </div>
             </Link>
+        </div>
         </div>
     );
 };
