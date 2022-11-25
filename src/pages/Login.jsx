@@ -48,6 +48,10 @@ const Login = ({ authentification, authEnter }) => {
       "authentification",
       JSON.stringify(true)
     );
+    window.localStorage.setItem(
+      "email",
+      JSON.stringify(email)
+    );
   };
 
   return (

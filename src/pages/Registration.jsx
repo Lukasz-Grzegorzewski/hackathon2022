@@ -22,9 +22,8 @@ const Login = () => {
           action="http://localhost:5010/registration" 
           method="post"
           className="reg-form"
-          onSubmit={() => {
-            // navigate("/");
-          }}
+          // onSubmit={() => {
+          // }}
         >
           <div className="name-container el-reg-form">
             <label className="name-label" htmlFor="name-input">
