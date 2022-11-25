@@ -30,6 +30,33 @@ const User = () => {
         reset()
     };
 
+    const destinations = [
+        {
+            city: "Damas",
+            country: "Syrie"
+        },
+        {
+            city: "Kaboul",
+            country: "Afghanistan"
+        },
+        {
+            city: "Sanaa",
+            country: "Yémen"
+        },
+        {
+            city: "Mogadiscio",
+            country: "Somalie"
+        },
+        {
+            city: "Djouba",
+            country: "Soudan du Sud"
+        }
+    ];
+
+    const handleClick = () => {
+        console.log('first')
+    }
+
     return (
         <main className="user">
             <section className="section section1">
@@ -52,11 +79,9 @@ const User = () => {
                     <div className="card2">
                         <h2 className="destinations">Destinations</h2>
                         <ul className="list">
-                            <li className="element">Damas, Syrie</li>
-                            <li className="element">Kaboul, Afghanistan 💣</li>
-                            <li className="element">Sanaa, Yémen</li>
-                            <li className="element">Mogadiscio, Somalie 🏴‍☠️</li>
-                            <li className="element">Djouba, Soudan du Sud</li>
+                            {destinations.map((dest) => (
+                                <li>{dest.city}, {dest.country}</li>
+                            ))}
                         </ul>
                     </div>
                 </div>
@@ -93,6 +118,12 @@ const User = () => {
                         </div>
                         <input className="submitBtn" type="submit" value="Envoyer ✈" />
                     </form>
+                </div>
+                <a className="downBtn" href="#destinations">▾ parameters ▾</a>
+            </section>
+            <section className="section section3">
+                <div id="destinations">
+
                 </div>
             </section>
         </main>

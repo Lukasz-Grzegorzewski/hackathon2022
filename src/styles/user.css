@@ -1,4 +1,6 @@
-html {scroll-snap-type: y mandatory}
+html {
+    scroll-snap-type: y mandatory
+}
 
 .user {
     position: relative;
@@ -111,14 +113,6 @@ html {scroll-snap-type: y mandatory}
     color: var(--orange);
 }
 
-.info .dob {
-    
-}
-
-.info .location {
-
-}
-
 .location span {
     font-weight: 700;
     color: var(--green);
@@ -140,9 +134,11 @@ html {scroll-snap-type: y mandatory}
 
 .card2 .list {
     margin-top: 2rem;
+    margin-left: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+    list-style-type: disc;
 }
 
 .info .link {
@@ -212,7 +208,8 @@ html {scroll-snap-type: y mandatory}
 }
 
 
-.formContainer .gender, .city {
+.formContainer .gender,
+.city {
     width: 100%;
 }
 
@@ -227,7 +224,8 @@ html {scroll-snap-type: y mandatory}
     text-transform: capitalize;
 }
 
-.formInner input, select {
+.formInner input,
+select {
     padding: 0.5rem 0.3rem;
     background-color: var(--yellow);
     border-radius: 5px;
@@ -248,6 +246,7 @@ html {scroll-snap-type: y mandatory}
     .card .profile {
         width: 70px;
     }
+
     .cardInside .info {
         padding-left: 1rem;
     }
