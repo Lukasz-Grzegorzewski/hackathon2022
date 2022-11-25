@@ -46,7 +46,7 @@ const Navbar = ({
                     <div className="buttons">
                         {authentification ? (
                             <>
-                                <Link to='/Profile'>Profil</Link>
+                                <Link to='/user'>Profil</Link>
                                 <button onClick={handleClick}>Déconnexion</button>
                             </>
                         ) : (
