@@ -27,12 +27,23 @@ const Home = ({ list }) => {
         return unique;
     };
     return (
-        <div >
+        <div className="homePage">
             <div className="bandeauImage">
                 <h1 className="headerTitre">AdopteUnGuide</h1>
             </div>
             <div className="filtersContainer">
                 <h2>Filtrer par...</h2>
+                <div className="countryFilter">
+                    <h4>Localisation</h4>
+                    <select onChange={(e) => setLocation(e.target.value)}>
+                        <option value="">Tous</option>
+                        {getUnique(allPeople).map((each, index) => (
+                            <option key={index} value={each}>
+                                {each}
+                            </option>
+                        ))}
+                    </select>
+                </div>
                 <div className="genderFilter">
                     <h4>Genre</h4>
                     <select onChange={(e) => setGender(e.target.value)}>
@@ -53,17 +64,6 @@ const Home = ({ list }) => {
                             <option value="90">75-90 ans</option>
                         </select>
                     </div>
-                </div>
-                <div className="countryFilter">
-                    <h4>Localisation</h4>
-                    <select onChange={(e) => setLocation(e.target.value)}>
-                        <option value="">Tous</option>
-                        {getUnique(allPeople).map((each, index) => (
-                            <option key={index} value={each}>
-                                {each}
-                            </option>
-                        ))}
-                    </select>
                 </div>
             </div>
 

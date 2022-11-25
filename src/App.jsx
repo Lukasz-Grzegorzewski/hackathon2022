@@ -31,6 +31,12 @@ function App() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        const data = localStorage.getItem("authentification");
+        setAuthentification(JSON.parse(data));
+        console.log("saved: ", data);
+    }, [authentification])
+
+    useEffect(() => {
         const source = axios.CancelToken.source();
         axios
             .get(
@@ -54,7 +60,7 @@ function App() {
 
     return (
         <div className={darkMode ? "dark" : "light"}>
-            <Navbar setAuthentification={setAuthentification} />
+            <Navbar setDarkMode={setDarkMode} darkMode={darkMode} authentification={authentification} setAuthentification={setAuthentification} />
             <Routes>
                 <Route
                     path="/"
@@ -65,6 +71,12 @@ function App() {
                         />
                     }
                 />
+                <Route
+                    path="/registration"
+                    element={
+                        <Registration />
+                    }
+                />
                 {authentification ? (
                     <>
                         <Route
@@ -72,11 +84,12 @@ function App() {
                             element={list.length !== 0 && <Home list={list} />}
                         />
                         <Route path="/card" element={<Card />} />
-                        <Route path="/user" element={<User />} />
+                        <Route path="/user" element={<User darkMode={darkMode} />} />
                     </>
                 ) : (
                     <Route path="/*" element={<Page404 />} />
                 )}
+                <Route path='/profile' element={<User />} />
             </Routes>
             <Footer />
         </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import '../styles/user.css';
 
-const User = () => {
+const User = ({ darkMode }) => {
 
     const [firstname, setFirstname] = useState('Thibaud');
     const [lastname, setLastname] = useState('Brault');
@@ -85,7 +85,6 @@ const User = () => {
                         </ul>
                     </div>
                 </div>
-                <a className="downBtn" href="#details">▾ parameters ▾</a>
             </section>
             <section className="section section2">
                 <div id="details" className="details">
@@ -116,7 +115,7 @@ const User = () => {
                                 <input type="text" name="city" id="city" placeholder="New city" {...register("city")} />
                             </div>
                         </div>
-                        <input className="submitBtn" type="submit" value="Envoyer ✈" />
+                        <input className="submitButton" type="submit" value="Envoyer ✈" />
                     </form>
                 </div>
                 <a className="downBtn" href="#destinations">▾ parameters ▾</a>

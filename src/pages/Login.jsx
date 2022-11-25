@@ -36,11 +36,18 @@ const Login = ({ authentification, authEnter }) => {
     if (
       users.some((user) => user.email === email && user.password === password)
     ) {
-      authEnter(!authentification);
+      authEnter(true);
       navigate("/home");
     } else {
       setError(!error);
     }
+  };
+
+  const authLocalStorage = () => {
+    window.localStorage.setItem(
+      "authentification",
+      JSON.stringify(true)
+    );
   };
 
   return (
@@ -48,7 +55,7 @@ const Login = ({ authentification, authEnter }) => {
       <div className="users-temp">
         {users.map((user, index) => (
           <div key={index} className="help-users">
-            <ul className="ul" >
+            <ul className="ul">
               <li>Email:</li>
               <li className="temp">{user.email}</li>
               <li>Password:</li>
@@ -58,7 +65,7 @@ const Login = ({ authentification, authEnter }) => {
         ))}
       </div>
       <div className="login-card">
-        <form className="form" onSubmit={(e) => e.preventDefault()}>
+        <form className="form-login" onSubmit={(e) => e.preventDefault()}>
           <div className="email-container element-form">
             <h2 className={!error ? "h1-no-error" : "h1-error"}>
               Wrong Email or Password
@@ -87,7 +94,14 @@ const Login = ({ authentification, authEnter }) => {
           </div>
 
           <div className="submitBtn-container">
-            <button className="submitBtn" onClick={() => auth()} type="submit">
+            <button
+              className="submitBtn"
+              onClick={() => {
+                auth();
+                authLocalStorage();
+              }}
+              type="submit"
+            >
               LOGIN
             </button>
           </div>
