@@ -1,10 +1,10 @@
 .carte-profil:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .carte-profil {
     position: relative;
-    transition-duration: 1.5s;
+    transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
     border: 3px solid var(--orange);
     background-color: #fff;
@@ -34,6 +34,7 @@
     background-size: 100%;
     align-self: flex-start;
     background-repeat: no-repeat;
+    z-index: 10;
 }
 
 .carte-profil .notFavorite {
@@ -46,14 +47,21 @@
     background-size: 100%;
     align-self: flex-start;
     background-repeat: no-repeat;
+    z-index: 10;
 }
 
-.carte-profil .sexe img {
+.carte-profil .sexe .femme {
     position: absolute;
     width: 13px;
-    top: -7%;
+    top: 7%;
     left: 5%;
-    padding-top: 20px;
+}
+
+.carte-profil .sexe .homme {
+    position: absolute;
+    width: 25px;
+    top: 7%;
+    left: 5%;
 }
 
 .carte-profil .personne {
@@ -66,7 +74,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 72%;
+    top: 70%;
     gap: 10px;
 }
 

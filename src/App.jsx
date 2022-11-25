@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import User from "./pages/User";
 import Card from "./pages/Card";
-import Registration from "./pages/Registration"
+import Registration from "./pages/Registration";
 import Page404 from "./components/Page404";
 
 // import users from "./data/users.json";
@@ -24,8 +24,7 @@ function App() {
     const [authentification, setAuthentification] = useState(false);
     const authEnter = () => {
         setAuthentification(!authentification);
-    }
-
+    };
 
     // toggle dark/light mode
     const [darkMode, setDarkMode] = useState(false);
@@ -42,7 +41,6 @@ function App() {
             )
             .then((response) => response.data)
             .then((data) => {
-                // console.log(data.results);
                 setList(data.results);
                 setUser(data.results[0]);
             })
@@ -73,18 +71,7 @@ function App() {
                             path="/home"
                             element={list.length !== 0 && <Home list={list} />}
                         />
-                        <Route
-                            path="/card"
-                            element={
-                                user.length !== 0 && (
-                                    <Card
-                                        user={user}
-                                        setDarkMode={setDarkMode}
-                                        darkMode={darkMode}
-                                    />
-                                )
-                            }
-                        />
+                        <Route path="/card" element={<Card />} />
                         <Route path="/user" element={<User />} />
                     </>
                 ) : (
