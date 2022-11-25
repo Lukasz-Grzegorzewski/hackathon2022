@@ -16,17 +16,17 @@ import users from "./data/users.json";
 function App() {
     const [list, setList] = useState([]);
 
-  //LOGIN
-  const [authentification, setAuthentification] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+    //LOGIN
+    const [authentification, setAuthentification] = useState(true);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
 
     // pour un user
     const [user, setUser] = useState([]);
 
     // toggle dark/light mode
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
 
     const navigate = useNavigate();
 
@@ -91,7 +91,10 @@ function App() {
                 />
                 {authentification ? (
                     <>
-                        <Route path="/home" element={list.length !== 0 && <Home list={list} />} />
+                        <Route
+                            path="/home"
+                            element={list.length !== 0 && <Home list={list} />}
+                        />
                         <Route
                             path="/card"
                             element={
