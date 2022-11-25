@@ -23,10 +23,11 @@ const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }
         <nav className="navbar">
             <div className="navbarContainer">
                 <div className="title">
-                    <Link to='/home'>
+                    <Link to="/home ">
                         <img className="logo" src={logo} alt="logo" />
                     </Link>
                 </div>
+
                 <div className="navbarInner">
                     <div className="toggle-mode">
                         <input
