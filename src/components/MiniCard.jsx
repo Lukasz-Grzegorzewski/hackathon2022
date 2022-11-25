@@ -6,39 +6,6 @@ import { Link } from 'react-router-dom';
 
 const MiniCard = ({ user }) => {
 
-    // const user = {
-    //     "gender": "female",
-    //     "name": {
-    //         "title": "Ms",
-    //         "first": "Gül",
-    //     },
-    //     "location": {
-    //         "street": {
-    //             "number": 2340,
-    //             "name": "Talak Göktepe Cd"
-    //         },
-    //         "city": "Kocaeli",
-    //         "state": "Karaman",
-    //         "country": "Turkey",
-    //         "postcode": 33292,
-    //         "coordinates": {
-    //             "latitude": "72.6116",
-    //             "longitude": "0.2477"
-    //         },
-    //         "timezone": {
-    //             "offset": "+3:00",
-    //             "description": "Baghdad, Riyadh, Moscow, St. Petersburg"
-    //         }
-    //     },
-    //     "dob": {
-    //         "age": 43
-    //     },
-    //     "picture": {
-    //         "large": "https://randomuser.me/api/portraits/women/5.jpg",
-    //         "thumbnail": "https://randomuser.me/api/portraits/thumb/women/5.jpg"
-    //     }
-    // }
-
     const [isFavorite, setisFavorite] = useState(false);
 
     function handleClickFavorite() {

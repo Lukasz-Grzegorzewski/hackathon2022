@@ -63,6 +63,8 @@ section {
 html {
     scroll-behavior: smooth;
     min-height: 100vh;
+    background: var(--yellow);
+    cursor: default;
 }
 
 body {
@@ -96,3 +98,11 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+}
+

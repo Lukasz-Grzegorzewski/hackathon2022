@@ -30,6 +30,7 @@ const Home = ({ list }) => {
     return (
         <div>
             <div>
+                <h1 className="titre">AdopteUnGuide</h1>
                 <img className="bandeauImage" src={imageC} alt="bandeauImage" />
             </div>
             <div className="filtersContainer">
@@ -59,13 +60,15 @@ const Home = ({ list }) => {
                     <h4>Localisation</h4>
                     <select onChange={(e) => setLocation(e.target.value)}>
                         <option value="">Tous</option>
-                        {getUnique(allPeople).map((each) => (
-                            <option value={each}>{each}</option>
+                        {getUnique(allPeople).map((each, index) => (
+                            <option key={index} value={each}>{each}</option>
                         ))}
                     </select>
                 </div>
             </div>
-            <div>
+           
+            <div className="profil">
+
                 {allPeople
                     .filter((each) => gender !== "all" ? each.gender === gender : each.gender.includes('male'))
                     .filter((each) =>
@@ -74,7 +77,8 @@ const Home = ({ list }) => {
                     .map((user, index) => (
                         <MiniCard key={index} user={user} />
                     ))
-                }
+               }
+
             </div>
         </div>
     );
