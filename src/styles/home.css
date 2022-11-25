@@ -1,7 +1,7 @@
 .homePage .bandeauImage .headerTitre {
     text-align: center;
     font-size: clamp(2rem, 8vw, 4rem);
-    color: whitesmoke;
+    color: white;
     text-shadow: 2px 2px 0 #212121;
     padding-top: 14vh;
 }
@@ -28,8 +28,16 @@
     margin: 10px 5vw;
     width: 90vw;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 8px;
-    gap: 5vw;
+    gap: 2vh;
+    justify-content: space-around;
+}
+
+.filtersSmallContainer {
+    display: flex;
+    width: 65vw;
     justify-content: space-around;
     color: var(--front);
 }
@@ -70,11 +78,13 @@
 .homePage .filtersContainer h4 {
     padding: 8px 4px 4px;
     font-size: 1rem;
+    font-weight: lighter;
 }
 
 .homePage .filtersContainer h2 {
     font-size: 1.2rem;
     padding-top: 8px;
+    font-weight: lighter;
 }
 
 @media screen and (max-width: 600px) {
@@ -87,4 +97,40 @@
         margin-right: 5%;
         margin-top: 0;
     }
+
+    .homePage .filtersSmallContainer {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        margin-left: 0;
+    }
+
+    .homePage .filtersContainer {
+        gap: 1vh;
+        justify-content: center;
+        margin-bottom: 3vh;
+        margin-left: 5vw;
+        width: 90vw;
+        padding: 0;
+    }
+
+    .filtersContainer h2 {
+        text-align: center;
+    }
+
+    .homePage .genderFilter,
+    .homePage .ageFilter,
+    .homePage .countryFilter {
+        padding: 0;
+        width: 25vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1vw;
+    }
+
+    .homePage .filtersContainer select {
+        width: 25vw;
+    }
 }
+
