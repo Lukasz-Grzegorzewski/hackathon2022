@@ -46,6 +46,7 @@
 }
 
 .form-login input {
+  cursor: pointer;
   height: 30px;
   border: 1px solid #f7f6dc;
   border-radius: 5px;
@@ -53,15 +54,18 @@
 }
 
 .form-login .submitBtn-container {
-  margin-top: 10%;
+  margin-top: 3%;
   display: flex;
   justify-content: center;
 }
 
 .form-login .submitBtn {
-  width: 50%;
-  background-color: #f7f6dc;
-  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 7px rgb(141, 137, 137);
+  width: 25%;
+  height: 50px;
+  border-radius: 8px;
+  background-color: var(--orange);
 }
 
 .error {
