@@ -15,20 +15,25 @@ import Page404 from "./components/Page404";
 // import users from "./data/users.json";
 
 function App() {
-    const [list, setList] = useState([]);
+  const [list, setList] = useState([]);
 
-    // pour un user
-    const [user, setUser] = useState([]);
+  // pour un user
+  const [user, setUser] = useState([]);
 
-    //authentification login
-    const [authentification, setAuthentification] = useState(false);
-    const authEnter = () => {
-        setAuthentification(!authentification);
-    };
+  //authentification login
+  const [authentification, setAuthentification] = useState(false);
+  const authEnter = () => {
+    setAuthentification(!authentification);
+  };
 
-    // toggle dark/light mode
-    const [darkMode, setDarkMode] = useState(false);
-    const navigate = useNavigate();
+  // toggle dark/light mode
+  const [darkMode, setDarkMode] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const data = localStorage.getItem("authentification");
+    setAuthentification(JSON.parse(data));
+    console.log("saved: ", data);
 
     useEffect(() => {
         const source = axios.CancelToken.source();
