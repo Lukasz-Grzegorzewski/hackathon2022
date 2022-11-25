@@ -1,0 +1,102 @@
+[
+    {
+        "userId": "1",
+        "name": "Nathalie",
+        "surname": "Dune",
+        "genre": "female",
+        "email": "na@na.na",
+        "password": "1",
+        "dob": "1977-10-03",
+        "city": "Nantes"
+    },
+    {
+        "userId": "2",
+        "name": "Amelie",
+        "surname": "Am",
+        "genre": "female",
+        "email": "am@am.am",
+        "password": "2",
+        "dob": "1980-10-03",
+        "city": "Nantes"
+    },
+    {
+        "userId": "3",
+        "name": "Lukasz",
+        "surname": "Gr",
+        "genre": "male",
+        "email": "lu@lu.lu",
+        "password": "3",
+        "dob": "1979-10-03",
+        "city": "Nantes"
+    },
+    {
+        "userId": "4",
+        "name": "Baptiste",
+        "surname": "Bap",
+        "genre": "male",
+        "email": "ba@ba.ba",
+        "password": "1",
+        "dob": "1979-10-03",
+        "city": "Nantes"
+    },
+    {
+        "userId": "5",
+        "name": "Thibaud ",
+        "surname": "Br",
+        "genre": "male",
+        "email": "th@th.th",
+        "password": "1",
+        "dob": "1987-10-03",
+        "city": "Nantes"
+    },
+    {
+        "name": "Lukasz",
+        "surname": "ggg",
+        "email": "test@com.fr",
+        "genre": "male",
+        "password": "AQW",
+        "dob": "1985-07-23",
+        "city": "Rabka",
+        "userId": 6
+    },
+    {
+        "name": "Lukasz",
+        "surname": "ggg",
+        "email": "test@com.fr",
+        "genre": "male",
+        "password": "AQW",
+        "dob": "1985-07-23",
+        "city": "Rabka",
+        "userId": 7
+    },
+    {
+        "name": "Lukasz",
+        "surname": "ggg",
+        "email": "test@com.fr",
+        "genre": "male",
+        "password": "AQW",
+        "dob": "1985-07-23",
+        "city": "Rabka",
+        "userId": 8
+    },
+    {
+        "name": "Lukasz",
+        "surname": "ggg",
+        "email": "test@com.fr",
+        "genre": "male",
+        "password": "AQW",
+        "dob": "1985-07-23",
+        "city": "Rabka",
+        "userId": 9
+    },
+    {
+        "name": "Lukasz",
+        "surname": "ggg",
+        "email": "test@com.fr",
+        "genre": "male",
+        "password": "AQW",
+        "dob": "1985-07-23",
+        "city": "Rabka",
+        "userId": 10
+    }
+]

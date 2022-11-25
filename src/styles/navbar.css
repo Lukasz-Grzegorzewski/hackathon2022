@@ -5,6 +5,21 @@
     background-color: #ffc090;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+}
+
+.navbar .links{
+    margin: 0 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .links .link{
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: auto 0;
+    background-color: rgba(241, 165, 66, 0.793);
+    border: 1px solid rgba(234, 177, 103, 0.793);
 }
 
 .logo{
