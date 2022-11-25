@@ -19,7 +19,7 @@ const Login = () => {
 
       <div className="login-card">
         <form
-          action="http://localhost:5010/registration" 
+          action="http://localhost:5010/registration"
           method="post"
           className="reg-form"
           onSubmit={() => {
@@ -28,24 +28,24 @@ const Login = () => {
         >
           <div className="name-container el-reg-form">
             <label className="name-label" htmlFor="name-input">
-              Name
+              Prénom
             </label>
             <input
               id="name-input"
               type="text"
               name="name"
-              placeholder="Enter your name"
+              placeholder="Votre prénom"
             />
           </div>
           <div className="surname-container el-reg-form">
             <label className="surname-label" htmlFor="surname-input">
-              Surname
+              Nom
             </label>
             <input
               id="surname-input"
               type="text"
               name="surname"
-              placeholder="Enter your surname"
+              placeholder="Votre nom"
             />
           </div>
           <div className="email-container el-reg-form">
@@ -56,7 +56,7 @@ const Login = () => {
               id="email-input"
               type="email"
               name="email"
-              placeholder="Enter your email"
+              placeholder="Votre email"
             />
           </div>
           <div className="genre-container el-reg-form">
@@ -64,24 +64,24 @@ const Login = () => {
               Genre
             </label>
             <select name="genre" id="genre" defaultValue=''>
-              
+
               <option value="">---</option>
-              <option value="female">female</option>
-              <option value="male">male</option>
+              <option value="female">féminin</option>
+              <option value="male">masculin</option>
             </select>
           </div>
 
           <div className="password-container el-reg-form">
-            <label htmlFor="password-input">Password</label>
+            <label htmlFor="password-input">Mot de passe</label>
             <input
               id="password-input"
               type="password"
               name="password"
-              placeholder="Enter your password"
+              placeholder="Votre mot de passe"
             />
           </div>
           <div className="dateOfBirth-container el-reg-form">
-            <label htmlFor="dateOfBirth-input">Date of birth</label>
+            <label htmlFor="dateOfBirth-input">Date de naissance</label>
             <input
               id="dateOfBirth-input"
               type="date"
@@ -90,18 +90,18 @@ const Login = () => {
             />
           </div>
           <div className="city-container el-reg-form">
-            <label htmlFor="city-input">City</label>
+            <label htmlFor="city-input">Ville</label>
             <input
               id="city-input"
               type="text"
               name="city"
-              placeholder="Enter your city"
+              placeholder="Votre ville"
             />
           </div>
 
           <div className="submitBtn-container">
             <button className="submitBtn" type="submit">
-              Register
+              Valider
             </button>
           </div>
         </form>
