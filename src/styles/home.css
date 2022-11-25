@@ -1,12 +1,12 @@
-.bandeauImage .headerTitre {
+.homePage .bandeauImage .headerTitre {
     text-align: center;
     font-size: clamp(2rem, 8vw, 4rem);
-    color: whitesmoke;
+    color: white;
     text-shadow: 2px 2px 0 #212121;
     padding-top: 14vh;
 }
 
-.bandeauImage {
+.homePage .bandeauImage {
     /* position: absolute; */
     width: 100%;
     height: 35vh;
@@ -17,56 +17,124 @@
 
 }
 
-.profil {
+.homePage .profil {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
     margin: 30px;
+    margin-bottom: 0;
+    padding-bottom: 100px;
 }
 
-
-.ageFilter {
-    position: relative;
-    width: 95vmin;
-    background-color: #ffffff;
-    padding: 50px 40px 20px 40px;
-    border-radius: 10px;
-}
-
-.filtersContainer {
-    margin: 10px 15vh;
+.homePage .filtersContainer {
+    margin: 10px 5vw;
+    width: 90vw;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 8px;
-    gap: 30px;
+    gap: 2vh;
+    justify-content: space-around;
+    color: var(--front);
+}
+
+.filtersSmallContainer {
+    display: flex;
+    width: 65vw;
     justify-content: space-around;
 }
 
-.genderFilter,
-.ageFilter,
-.countryFilter {
+.homePage .genderFilter,
+.homePage .ageFilter,
+.homePage .countryFilter {
     padding: 0 8px;
-    width: 10vw;
+    width: 15vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1vw;
 }
 
-.filtersContainer h4 {
-    padding: 0 4px 4px;
+.homePage .filtersContainer select {
+    background-color: var(--orange);
+    width: 15vw;
+    box-shadow: 2px 2px 0 #212121;
+
+}
+
+.homePage .filtersContainer option {
+    background-color: #ffdeca;
+}
+
+.homePage .filtersContainer option:checked {
+    appearance: none;
+    background: var(--orange);
+    color: white;
+}
+
+.homePage .filtersContainer option:hover {
+    appearance: none;
+    background: var(--orange);
+    color: white;
+}
+
+.homePage .filtersContainer h4 {
+    padding: 8px 4px 4px;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.homePage .filtersContainer h2 {
     font-size: 1.2rem;
-}
-
-.filtersContainer h2 {
-    font-size: 1.4rem;
+    padding-top: 8px;
+    font-weight: lighter;
 }
 
 @media screen and (max-width: 600px) {
 
-    .profil {
+    .homePage .profil {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
         gap: 25px;
         margin-left: 5%;
         margin-right: 5%;
-        margin-top: 30%;
+        margin-top: 0;
+    }
+
+    .homePage .filtersSmallContainer {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        margin-left: 0;
+    }
+
+    .homePage .filtersContainer {
+        gap: 1vh;
+        justify-content: center;
+        margin-bottom: 3vh;
+        margin-left: 5vw;
+        width: 90vw;
+        padding: 0;
+    }
+
+    .filtersContainer h2 {
+        text-align: center;
+    }
+
+    .homePage .genderFilter,
+    .homePage .ageFilter,
+    .homePage .countryFilter {
+        padding: 0;
+        width: 25vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1vw;
+    }
+
+    .homePage .filtersContainer select {
+        width: 25vw;
     }
 }

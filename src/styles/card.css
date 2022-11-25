@@ -210,32 +210,6 @@
     border-left: 1px gray solid;
 }
 
-@media screen and (max-width: 500px) {
-    .big-card .container-conversation {
-        border: 3px var(--orange) solid;
-        box-shadow: 0px 0px 15px black;
-        border-radius: 20px;
-        overflow: hidden;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        height: 500px;
-        width: calc(100% - 4rem);
-        max-width: 1500px;
-    }
-
-    .big-card .emote {
-        position: absolute;
-        right: 200px;
-        bottom: 320px;
-        background-color: lightgray;
-        overflow: visible;
-    }
-}
-
 @media screen and (max-width: 520px) {
     .big-card .container-conversation {
         width: calc(100% - 2rem);

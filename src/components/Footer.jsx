@@ -22,20 +22,12 @@ function Footer() {
                 </Link>
             </div>
 
-        <div className='name'>
-            <p className='firts'>Amelie Guilloux</p>
-            <p className='firts'>Lukasz Grzegorzewski</p>
-            <p className='firts'>Baptiste Courtin</p> 
-            <p className='firts'>Thibaud Braunt</p>
-            <p className='firts'>Nathalie Dune</p>   
-        </div>
-
-            <div className="name">
-                <p className="firts">Amelie Guilloux</p>
-                <p className="firts">Łukasz Grzegorzewski</p>
-                <p className="firts">Baptiste Courtin</p>
-                <p className="firts">Thibaud Braunt</p>
-                <p className="firts">Nathalie Dune</p>
+            <div className='name'>
+                <p className='firts'>Amelie Guilloux</p>
+                <p className='firts'>Lukasz Grzegorzewski</p>
+                <p className='firts'>Baptiste Courtin</p>
+                <p className='firts'>Thibaud Braunt</p>
+                <p className='firts'>Nathalie Dune</p>
             </div>
         </footer>
     );
