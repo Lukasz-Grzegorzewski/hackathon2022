@@ -16,14 +16,17 @@ import users from "./data/users.json";
 function App() {
     const [list, setList] = useState([]);
 
-    //LOGIN
-    const [authentification, setAuthentification] = useState(true);
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(false);
+  //LOGIN
+  const [authentification, setAuthentification] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
 
     // pour un user
     const [user, setUser] = useState([]);
+
+    // toggle dark/light mode
+    const [darkMode, setDarkMode] = useState(true);
 
     const navigate = useNavigate();
 
@@ -69,7 +72,7 @@ function App() {
     }, []);
 
     return (
-        <>
+        <div className={darkMode ? "dark" : "light"}>
             <Navbar setAuthentification={setAuthentification} />
             <Routes>
                 <Route
@@ -88,10 +91,18 @@ function App() {
                 />
                 {authentification ? (
                     <>
-                        <Route path="/home" element={<Home />} />
+                        <Route path="/home" element={list.length !== 0 && <Home list={list} />} />
                         <Route
                             path="/card"
-                            element={user.length !== 0 && <Card user={user} />}
+                            element={
+                                user.length !== 0 && (
+                                    <Card
+                                        user={user}
+                                        setDarkMode={setDarkMode}
+                                        darkMode={darkMode}
+                                    />
+                                )
+                            }
                         />
                         <Route path="/user" element={<User />} />
                     </>
@@ -100,7 +111,7 @@ function App() {
                 )}
             </Routes>
             <Footer />
-        </>
+        </div>
     );
 }
 
