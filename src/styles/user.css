@@ -1,11 +1,21 @@
 html {
-    scroll-snap-type: y mandatory
+    scroll-snap-type: y mandatory;
 }
 
 .user {
     position: relative;
-    width: 80%;
-    margin: 0 auto;
+}
+
+.user .bandeau {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35vh;
+    background-image: url('../assets/holiday.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .user .section {
@@ -13,11 +23,25 @@ html {
     height: 100vh;
     scroll-snap-align: center;
     gap: 2rem;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .section1 {
     display: grid;
     grid-template-columns: 2fr 1fr;
+}
+
+.section1 .scrollIndicator {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    border-radius: 50%;
+    background-color: var(--green);
 }
 
 .section2 {
@@ -229,9 +253,61 @@ select {
     outline: 2px solid var(--orange);
 }
 
-@media screen and (max-width: 600px) {
-    .user {
+@media screen and (max-width: 800px) {
+
+    html {
+        scroll-snap-type: none;
+    }
+
+    .user .section {
         width: 95%;
+        margin: 0 auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user .section1 {
+        padding-top: 30vh;
+        margin-bottom: 5rem;
+    }
+
+    .user .section2 {
+        padding-bottom: 5rem;
+    }
+
+    .section1 .scrollIndicator {
+        display: none;
+    }
+
+    .section .cards {
+        height: 250px;
+    }
+
+    .cards .card1 {
+        height: 100%;
+    }
+
+    .cards .card2 {
+        height: 100%;
+    }
+
+    .info .profileName {
+        margin-top: 0;
+    }
+
+    .info .carac {
+        display: none;
+    }
+
+    .info .link {
+        position: relative;
+        width: max-content;
+        margin-top: 1rem;
+    }
+
+    .form .formContainer {
+        flex-wrap: wrap;
     }
 }
 

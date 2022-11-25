@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/user.css';
 import axios from "axios";
+import { BiChevronDown } from 'react-icons/bi'
 
 const User = () => {
 
@@ -60,6 +61,7 @@ const User = () => {
 
     return (
         <main className="user">
+            <div className="bandeau" />
             <section className="section section1">
                 <div className="cards">
                     <div className="card1">
@@ -91,6 +93,7 @@ const User = () => {
                         </ul>
                     </div>
                 </div>
+                <p className="scrollIndicator"><BiChevronDown /></p>
             </section>
             <section className="section section2">
                 <div id="details" className="details">
