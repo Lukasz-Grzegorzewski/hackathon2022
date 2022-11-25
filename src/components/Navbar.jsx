@@ -47,13 +47,13 @@ const Navbar = ({ authentification, setAuthentification, darkMode, setDarkMode }
                                 <button onClick={handleClick}>Déconnexion</button>
                             </>
                         ) : (
-                            <Link to='/registration'>S'enregistrer</Link>
+                            <Link to="/registration">S'enregistrer</Link>
                         )}
                     </div>
                 </div>
             </div>
         </nav>
-    )
+    );
 };
 
 export default Navbar;
