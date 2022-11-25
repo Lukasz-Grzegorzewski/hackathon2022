@@ -27,9 +27,9 @@ app.post("/registration", async (req, res) => {
 
     const file = await fs.readFile('./data/users.json');
     const json = JSON.parse(file);
-    let lengthUsers = json.length;    
-    body = {...body, userId: Number(json[json.length - 1].userId) + 1}
-    
+    let lengthUsers = json.length;
+    body = { ...body, userId: Number(json[json.length - 1].userId) + 1 }
+
     json.push(body);
     await fs.writeFile('./data/users.json', JSON.stringify(json, null, 4));
     // res.send(json);
@@ -41,14 +41,13 @@ app.post("/user", async (req, res) => {
     var body = req.body;
     // console.log("body: ", body);
 
-    
     const file = await fs.readFile('./data/users.json');
     const json = JSON.parse(file);
     let lengthUsers = json.length;
     const userIndex = json.findIndex((item) => {
         body.name === item.name
-    }) 
-    json[userIndex] = {...json[userIndex], ...body}
+    })
+    json[userIndex] = { ...json[userIndex], ...body }
     await fs.writeFile('./data/users.json', JSON.stringify(json, null, 4));
     res.send(json);
     // res.redirect('http://localhost:3000/');

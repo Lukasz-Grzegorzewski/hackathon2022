@@ -1,9 +1,9 @@
-.navbar{
+.navbar {
     position: absolute;
     top: 0;
     width: 100%;
     height: 10vh;
-    background-color: rgba(255, 192, 144, 0.3);
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     z-index: 2;
@@ -18,31 +18,35 @@
     justify-content: space-between;
 }
 
-.navbarContainer .title {
+.navbar .navbarContainer .title {
     display: flex;
     align-items: center;
     height: 100%;
     gap: 1rem;
 }
 
-.title .logo {
+.title a {
     height: 100%;
 }
 
-.navbarContainer .navbarInner {
+.title a .logo {
+    height: 100%;
+}
+
+.navbar .navbarContainer .navbarInner {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.navbarInner .buttons{
+.navbar .navbarInner .buttons {
     margin: 0 20px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.buttons a {
+.navbar .buttons a {
     padding: 5px 10px;
     border-radius: 5px;
     background-color: var(--green);
@@ -51,16 +55,18 @@
     transition: 0.3s ease-in-out;
 }
 
-.buttons a:hover {
+.navbar .buttons a:hover {
     background-color: transparent;
     border: 1px solid var(--green);
 }
 
-.buttons button {
+.navbar .buttons button {
     padding: 5px 10px;
     border-radius: 5px;
     background: none;
     border: 1px solid var(--green);
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    color: var(--front);
+    background-color: var(--back);
 }

@@ -51,7 +51,7 @@ const Login = ({ authentification, authEnter }) => {
     window.localStorage.setItem(
       "email",
       JSON.stringify(email)
-    );
+    )
   };
 
   return (
