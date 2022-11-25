@@ -60,8 +60,8 @@ const Home = ({ list }) => {
                     <h4>Localisation</h4>
                     <select onChange={(e) => setLocation(e.target.value)}>
                         <option value="">Tous</option>
-                        {getUnique(allPeople).map((each) => (
-                            <option value={each}>{each}</option>
+                        {getUnique(allPeople).map((each, index) => (
+                            <option key={index} value={each}>{each}</option>
                         ))}
                     </select>
                 </div>
