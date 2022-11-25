@@ -28,7 +28,7 @@ function App() {
 
 
     // toggle dark/light mode
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -69,7 +69,10 @@ function App() {
                 />
                 {authentification ? (
                     <>
-                        <Route path="/home" element={list.length !== 0 && <Home list={list} />} />
+                        <Route
+                            path="/home"
+                            element={list.length !== 0 && <Home list={list} />}
+                        />
                         <Route
                             path="/card"
                             element={

@@ -65,7 +65,7 @@ const Card = ({ user, setDarkMode, darkMode }) => {
                 <label class="toggle" for="toggle">
                     <HiSun className="sun icon" />
                     <HiMoon className="moon icon" />
-                    <span class="ball"></span>
+                    <span className="ball"></span>
                 </label>
             </div>
 
