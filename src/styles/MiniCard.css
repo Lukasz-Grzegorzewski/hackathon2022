@@ -34,6 +34,7 @@
     background-size: 100%;
     align-self: flex-start;
     background-repeat: no-repeat;
+    z-index: 10;
 }
 
 .carte-profil .notFavorite {
@@ -46,14 +47,21 @@
     background-size: 100%;
     align-self: flex-start;
     background-repeat: no-repeat;
+    z-index: 10;
 }
 
-.carte-profil .sexe img {
+.carte-profil .sexe .femme {
     position: absolute;
     width: 13px;
-    top: -7%;
+    top: 7%;
     left: 5%;
-    padding-top: 20px;
+}
+
+.carte-profil .sexe .homme {
+    position: absolute;
+    width: 25px;
+    top: 7%;
+    left: 5%;
 }
 
 .carte-profil .personne {
