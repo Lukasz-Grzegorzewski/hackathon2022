@@ -168,5 +168,15 @@
         "dob": "2022-11-02",
         "city": "d",
         "userId": 17
+    },
+    {
+        "name": "Baptiste",
+        "surname": "Courtin",
+        "email": "bat2.0contact@gmail.com",
+        "genre": "male",
+        "password": "1",
+        "dob": "2001-10-29",
+        "city": "Nantes",
+        "userId": 18
     }
 ]
