@@ -35,10 +35,11 @@
 }
 
 .filtersContainer {
-    margin: 10px 15vh;
+    margin: 10px 10vw;
+    width: 80vw;
     display: flex;
     padding: 8px;
-    gap: 30px;
+    gap: 5vw;
     justify-content: space-around;
 }
 
@@ -46,16 +47,23 @@
 .ageFilter,
 .countryFilter {
     padding: 0 8px;
-    width: 10vw;
+    width: 15vw;
+    display: flex;
+    gap: 1vw;
+}
+
+.filtersContainer select {
+    background-color: var(--orange);
 }
 
 .filtersContainer h4 {
-    padding: 0 4px 4px;
-    font-size: 1.2rem;
+    padding: 8px 4px 4px;
+    font-size: 1rem;
 }
 
 .filtersContainer h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    padding-top: 8px;
 }
 
 @media screen and (max-width: 600px) {
@@ -69,4 +77,5 @@
         margin-right: 5%;
         margin-top: 30%;
     }
+
 }
