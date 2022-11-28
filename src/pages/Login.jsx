@@ -52,7 +52,7 @@ const Login = ({ authentification, authEnter }) => {
 
     return (
         <div className="login-container">
-            <div className="users-temp">
+            {/* <div className="users-temp">
                 {users.map((user, index) => (
                     <div key={index} className="help-users">
                         <ul className="ul">
@@ -63,7 +63,7 @@ const Login = ({ authentification, authEnter }) => {
                         </ul>
                     </div>
                 ))}
-            </div>
+            </div> */}
 
             <div className="login-card">
                 <form

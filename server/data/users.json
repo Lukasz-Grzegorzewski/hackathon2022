@@ -48,5 +48,15 @@
         "password": "5",
         "dob": "1999-02-10",
         "city": "Nantes"
+    },
+    {
+        "name": "Baptiste",
+        "surname": "Courtin",
+        "email": "bap2910@gmail.com",
+        "genre": "male",
+        "password": "1",
+        "dob": "2022-11-09",
+        "city": "caen",
+        "userId": 6
     }
 ]
