@@ -2,7 +2,7 @@
 
 :root {
     --green: #7fb77e;
-    --yellow: #f7f6dc;
+    --yellow: #eeeeee;
     --orange: #ffc090;
     --title: "Mochiy Pop One", sans-serif;
     --text: "Montserrat", sans-serif;
@@ -26,6 +26,11 @@
     --frontgray: rgb(240, 240, 240);
 
     --textcolor: white;
+}
+
+.app {
+    position: relative;
+    background-color: var(--back);
 }
 
 *,
@@ -69,6 +74,7 @@ html {
 
 body {
     line-height: 1;
+    height: 100%;
 }
 
 ol,
@@ -99,10 +105,8 @@ table {
     border-spacing: 0;
 }
 
-
 @media screen and (max-width: 600px) {
     html {
         font-size: 14px;
     }
 }
-

@@ -39,10 +39,6 @@
 
 /* -- light -- */
 
-.light {
-    background-color: white;
-}
-
 .light .toggle-mode label.toggle {
     background: white;
 }
@@ -60,10 +56,6 @@
 }
 
 /* -- dark -- */
-
-.dark {
-    background-color: black;
-}
 
 .dark .toggle-mode label.toggle {
     background: black;

@@ -163,6 +163,7 @@
     margin: 0 1rem;
     padding: 0.25rem 0.5rem;
     position: relative;
+    border-radius: 20px;
 }
 
 .big-card .fichier {
@@ -178,11 +179,9 @@
 .big-card .emote {
     position: absolute;
     right: 220px;
-    bottom: 320px;
+    bottom: 330px;
     height: 150px;
     width: 150px;
-    background-color: lightgray;
-    overflow: visible;
 }
 
 .big-card .container-new-message {
@@ -209,4 +208,24 @@
 .big-card .container-new-message button {
     padding: 0.25rem;
     border-left: 1px gray solid;
+}
+
+@media screen and (max-width: 520px) {
+    .big-card .container-conversation {
+        width: calc(100% - 2rem);
+    }
+
+    .big-card .emote {
+        right: 210px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .big-card .container-conversation {
+        width: calc(100% - 0.5rem);
+    }
+
+    .big-card .emote {
+        right: 190px;
+    }
 }

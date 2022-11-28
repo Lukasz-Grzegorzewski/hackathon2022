@@ -6,9 +6,9 @@ const Page404 = () => {
   return (
     <div className="page404">
       <h1 className="error404">404</h1>
-      <div>
-        <p>URL doesn't exists. Go to</p>
-        <Link to={"/"}>LOGIN</Link>
+      <div className="">
+        <p>URL n'existe pas!</p><br/>
+        <Link className="link" to={"/"}>CONNEXION</Link>
       </div>
     </div>
   );

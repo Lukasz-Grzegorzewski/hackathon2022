@@ -1,15 +1,32 @@
-.page404{
-    padding-top: 20%;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
-    gap: 20%;
-    /* background-color: red; */
+.page404 {
+  /* padding-top: 20%; */
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 20%;
+  /* background-color: red; */
+  background-color: var(--back);
+  color: var(--front);
 }
 
-.page404 h1.error404{
-    font-size: 60px;
+.page404 h1.error404 {
+    margin-top: 30vh;
+  font-size: 60px;
+}
+
+.link {
+  cursor: pointer;
+  box-shadow: 5px 5px 7px rgb(141, 137, 137);
+  height: 50px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: var(--orange);
+}
+
+@media screen and (max-width: 600px) {
+  .page404 {
+  }
 }

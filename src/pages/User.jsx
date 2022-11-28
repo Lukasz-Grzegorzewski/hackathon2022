@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/user.css';
 import axios from "axios";
+import { BiChevronDown } from 'react-icons/bi'
 
 const User = () => {
 
     const [userEmail, setUserEmail] = useState('');
     const [users, setUsers] = useState([]);
+    const [country, setCountry] = useState("France");
 
     useEffect(() => {
         const getEmail = localStorage.getItem("email");
@@ -60,6 +62,7 @@ const User = () => {
 
     return (
         <main className="user">
+            <div className="bandeau" />
             <section className="section section1">
                 <div className="cards">
                     <div className="card1">
@@ -73,7 +76,7 @@ const User = () => {
                                         <p className="carac"><span>♥</span> coding</p>
                                         <h2 className="profileName">{u.name} <br /> {u.surname}</h2>
                                         <p className="dob">{u.dob}</p >
-                                        <p className="location">{u.city}, <span>{country}</span></p>
+                                        <p className="location">{u.city}, <span>France</span></p>
                                     </>
                                 ))}
                                 <Link className="link" to="/profile">Vos messages ➜</Link>
@@ -91,6 +94,7 @@ const User = () => {
                         </ul>
                     </div>
                 </div>
+                <p className="scrollIndicator"><BiChevronDown /></p>
             </section>
             <section className="section section2">
                 <div id="details" className="details">
